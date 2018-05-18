@@ -925,7 +925,7 @@ Description of the payload:
     - ``signature``: The hex-encoded signature of the hash of the mutation.
 
 Signing Process
-^^^^^^^^^^^^^^^
+---------------
 
 For producing the signatures:
 
@@ -936,7 +936,7 @@ For producing the signatures:
 .. important:: You must submit the exact byte string as obtained after step 1. If it modified, the hash won't match and the signature will then be invalid.
 
 Outputs
-~~~~~~~
+-------
 
 The output is a JSON document passed as part of the body of the response.
 
@@ -956,7 +956,7 @@ Query the value and version of a record given its key.
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -965,7 +965,7 @@ Inputs are passed through the query string as URL encoded parameters.
 ==============  ==============
 
 Output
-~~~~~~
+------
 
 The output is a JSON document passed as part of the body of the response.
 
@@ -995,7 +995,7 @@ Transaction stream (``/stream``)
 This endpoint is a WebSocket endpoint. It can be used to receive all the newly confirmed transaction in real-time.
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -1004,7 +1004,7 @@ Inputs are passed through the query string as URL encoded parameters.
 ==============  ==============
 
 Output
-~~~~~~
+------
 
 The output is a WebSocket binary stream.
 
@@ -1018,12 +1018,12 @@ Get information about the Openchain instance.
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 This method has no input parameters.
 
 Output
-~~~~~~
+------
 
 The output is a JSON array passed as part of the body of the response.
 
@@ -1045,7 +1045,7 @@ Query all the ACC records at a given path (non-recursively).
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -1054,7 +1054,7 @@ Inputs are passed through the query string as URL encoded parameters.
 =================  ==============
 
 Output
-~~~~~~
+------
 
 The output is a JSON array passed as part of the body of the response.
 
@@ -1086,7 +1086,7 @@ Retrieve a transaction given the hash of the mutation.
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -1096,7 +1096,7 @@ Inputs are passed through the query string as URL encoded parameters.
 =================  ==============
 
 Output
-~~~~~~
+------
 
 The output is a JSON document passed as part of the body of the response.
 
@@ -1141,7 +1141,7 @@ Retrieve a specific version of a record.
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -1150,7 +1150,7 @@ Inputs are passed through the query string as URL encoded parameters.
 =================  ==============
 
 Output
-~~~~~~
+------
 
 The output is a JSON document passed as part of the body of the response.
 
@@ -1180,7 +1180,7 @@ Retrieve all the mutations that have affected a given record.
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -1189,7 +1189,7 @@ Inputs are passed through the query string as URL encoded parameters.
 =================  ==============
 
 Output
-~~~~~~
+------
 
 The output is a JSON document passed as part of the body of the response.
 
@@ -1213,7 +1213,7 @@ Retrieve all the record under a given path (includes sub-paths).
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -1222,7 +1222,7 @@ Inputs are passed through the query string as URL encoded parameters.
 =================  ==============
 
 Output
-~~~~~~
+------
 
 The output is a JSON document passed as part of the body of the response.
 
@@ -1252,7 +1252,7 @@ Retrieve all records with a given type and name
 **Method**: GET
 
 Inputs
-~~~~~~
+------
 
 Inputs are passed through the query string as URL encoded parameters.
 
@@ -1262,7 +1262,7 @@ Inputs are passed through the query string as URL encoded parameters.
 =================  ==============
 
 Output
-~~~~~~
+------
 
 The output is a JSON document passed as part of the body of the response.
 
@@ -1310,7 +1310,7 @@ Openchain has the ability to define aliases for accounts, this simplify the user
 To do so, clients should understand the following syntax as a valid account path: ``@<name>``, and turn it internally into ``/aka/<name>/``.
 
 Example
-~~~~~~~
+-------
 
 If a user wants to send funds to the following account::
 
@@ -1332,7 +1332,7 @@ Goto records must have the special name ``goto``.
 When a client application sends funds to a path, it must first look for a ``DATA`` record named ``goto``. If it exists, the client application must use the path defined as the value of the record instead.
 
 Example
-~~~~~~~
+-------
 
 If a user wants to send funds to the following account::
 
@@ -1360,7 +1360,7 @@ It is important to be able to associate information with an asset type so that u
 The asset definition record can be used to record this information. The asset definition record is a ``DATA`` record with the special name ``asdef``. In addition, it must be placed under the same path as the asset it is attached to.
 
 Example
-~~~~~~~
+-------
 
 In order to associate information with the asset represented by path ``/asset/gold/``, the following record must be set::
 
@@ -1496,24 +1496,24 @@ Permissions
 -----------
 
 ``account_negative``
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 This permission indicates the right to affect the balance of ``ACC`` records, both to increase it (receive funds) and decrease it (send funds) with no restriction on the final balance. If this permission is granted, the ``ACC`` record balance can be made negative.
 
 This permission is typically granted to the users allowed to issue an asset.
 
 ``account_spend``
-~~~~~~~~~~~~~~~~~
+-----------------
 
 This permission indicates the right to affect the balance of ``ACC`` records, both to increase it (receive funds) and decrease it (send funds) with the restriction that the final balance must remain positive or zero.
 
 ``account_modify``
-~~~~~~~~~~~~~~~~~~
+------------------
 
 This permission is required to affect the balance of ``ACC`` records that have already been modified before (the record version is non-empty).
 
 ``account_create``
-~~~~~~~~~~~~~~~~~~
+------------------
 
 This permission is required to affect the balance of ``ACC`` records that have never been modified before (the record version is empty).
 
@@ -1523,7 +1523,7 @@ This permission is required to affect the balance of ``ACC`` records that have n
     A closed loop ledger can be created by denying ``account_modify`` and ``account_create`` by default, and selectively granting these for some accounts. By doing this, only approved accounts can receive funds.
 
 ``data_modify``
-~~~~~~~~~~~~~~~
+---------------
 
 This permission is required to modify a ``DATA`` record.
 
@@ -1629,7 +1629,7 @@ When this happens, they should report it to the company administering the Opench
 The administrator can then simply update the relevant ``acl`` record to change the previous address into the new address, corresponding to the new key.
 
 Handling fraudulent transactions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 If fraudulent transactions have happened in the meantime, the administrator can commit a new transaction representing the opposite transfer.
 
