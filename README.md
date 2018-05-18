@@ -558,11 +558,6 @@ Storage engines
 
 Storage engines are core components responsible for storing the transaction chain and records.
 
-|Provider|Module|Description|Maintainer
-|``SQLite``|`Openchain.Sqlite <https://www.nuget.org/packages/Openchain.Sqlite>`|Stores the chain in a local Sqlite database.|`Coinprism <https://github.com/openchain/openchain>`
-|``MsSQL``|`Openchain.SqlServer <https://www.nuget.org/packages/Openchain.SqlServer>`|Stores the chain in a SQL Server database.|`Coinprism <https://github.com/openchain/openchain>`
-|``MongoDB``|Openchain.MongoDb|Stores the chain in a MongoDB database.|`@fluce <https://github.com/openchain/mongodb-storage>`_
-
 Setting the instance info on a new instance
 ===========================================
 
@@ -884,9 +879,7 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-==============  ==============
-``key``         The hex-encoded key of the record being queried.
-==============  ==============
+``key``: The hex-encoded key of the record being queried.
 
 Output
 ------
@@ -919,9 +912,7 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-==============  ==============
-``from``        **(optional)** The hex-encoded hash of the last transaction to resume from. If omitted, it will start from the first transaction.
-==============  ==============
+``from`` **(optional)** The hex-encoded hash of the last transaction to resume from. If omitted, it will start from the first transaction.
 
 Output
 ------
@@ -967,9 +958,7 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-=================  ==============
-``account``        The path to query for.
-=================  ==============
+``account``: The path to query for.
 
 Output
 ------
@@ -1006,10 +995,8 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-=================  ==============
-``mutation_hash``  The hex-encoded hash of the mutation represented by the transaction.
-``format``         The output format (``raw`` or ``json``).
-=================  ==============
+``mutation_hash``: The hex-encoded hash of the mutation represented by the transaction.
+``format``: The output format (``raw`` or ``json``).
 
 Output
 ------
@@ -1121,9 +1108,7 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-=================  ==============
-``account``        The path being queried.
-=================  ==============
+``account``: The path being queried.
 
 Output
 ------
