@@ -92,7 +92,7 @@ The wallet is a client side application running in the browser, and capable of c
 
 ![alt tag](https://i.imgur.com/9uwWQaJ.png)
 
-The first page invites you to connect to an endpoint. Click the link to use the test endpoint provided by Coinprism, then click "Check endpoint". The wallet will then try to connect to the Tedchain instance and retrieve the instance information.
+The first page invites you to connect to an endpoint. Click the link to use the test endpoint provided by TedLab, then click "Check endpoint". The wallet will then try to connect to the Tedchain instance and retrieve the instance information.
 
 ![alt tag](https://i.imgur.com/DaokjGr.png)
 
@@ -118,7 +118,7 @@ You are now able to receive payments on the Tedchain instance by giving your acc
 Issue an asset
 --------------
 
-The test endpoint provided by Coinprism has third party asset issuance enabled, so we can now issue an asset.
+The test endpoint provided by TedLab has third party asset issuance enabled, so we can now issue an asset.
 
 To do this, click the "Assets" tab.
 
@@ -468,7 +468,7 @@ Here is the default file:
         "provider": "Blockchain",
         // The key used to publish anchors in the Blockchain
         "key": "",
-        "bitcoin_api_url": "https://testnet.api.coinprism.com/v1/",
+        "bitcoin_api_url": "https://testnet.api.tedchain.network/v1/",
         "network_byte": 111,
         "fees": 5000,
         "storage": {
@@ -534,10 +534,10 @@ This section contains configuration settings relative to publishing an anchor to
 
 - ``provider``: Value defining which anchoring mode to use. Currently, the only supported value is ``Blockchain``, and publishes a cumulative hash of the database onto a Bitcoin-compatible blockchain.
 - ``key``: The private key to use (in WIF format) as the signing address for the proof of publication transactions.
-- ``bitcoin_api_url``: The Coinprism API endpoint to use to list unspent outputs and broadcast the signed transaction. Valid values include:
+- ``bitcoin_api_url``: The TedLab API endpoint to use to list unspent outputs and broadcast the signed transaction. Valid values include:
 
-    - https://api.coinprism.com/v1/ (Bitcoin mainnet)
-    - https://testnet.api.coinprism.com/v1/ (Bitcoin testnet)
+    - https://api.tedchain.network/v1/ (Bitcoin mainnet)
+    - https://testnet.api.tedchain.network/v1/ (Bitcoin testnet)
 
 - ``network_byte``: The network byte corresponding to the network on which the anchor transaction is published.
 - ``storage:provider``: Value defining how to cache anchors locally. Currently, the only supported value is ``SQLite`` and caches data locally in a SQLite database.
