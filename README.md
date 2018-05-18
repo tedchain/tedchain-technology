@@ -31,26 +31,26 @@ Features of Tedchain include:
 2. No mining fees.
 3. Extremely high scalability.
 4. Secured through digital signatures.
-5. :ref:`Immutability <anchoring>`: Commit an anchor in the Bitcoin Blockchain to benefit from the irreversibility of its Proof of Work.
-6. :ref:`Assign aliases <aliases>` to users instead of using base-58 addresses.
+5. `Immutability <anchoring>`: Commit an anchor in the Bitcoin Blockchain to benefit from the irreversibility of its Proof of Work.
+6. `Assign aliases <aliases>` to users instead of using base-58 addresses.
 7. Multiple levels of control:
 
   - Fully open ledger that can be joined anonymously.
-  - :ref:`Closed-loop ledger <closed-loop>` where participants must be approved by the administrator.
+  - `Closed-loop ledger <closed-loop>` where participants must be approved by the administrator.
   - A mix of the above where approved users enjoy more rights than anonymous users.
 
-8. :ref:`Hierarchical account system <account-hierarchy>` allowing to set permissions at any level.
+8. `Hierarchical account system <account-hierarchy>` allowing to set permissions at any level.
 9. Transparency and auditability of transactions.
-10. :ref:`Handle loss or theft <loss-theft>` of private keys without any loss to the end users.
-11. Ability to have multiple Tedchain instances :ref:`replicating from each other <transaction-stream>`.
+10. `Handle loss or theft <loss-theft>` of private keys without any loss to the end users.
+11. Ability to have multiple Tedchain instances `replicating from each other <transaction-stream>`.
 
 Getting started
 ---------------
 
 To familiarize yourself with Tedchain, you can:
 
-* :ref:`Try the wallet <tedchain-client>` against the test endpoint
-* :ref:`Deploy your own Tedchain server <docker-deployment>`
+* `Try the wallet <tedchain-client>` against the test endpoint
+* `Deploy your own Tedchain server <docker-deployment>`
 
 Frequently Asked Questions
 --------------------------
@@ -74,12 +74,12 @@ The pegging module is optional, and an instance doesn't have to be setup as a si
 Does Tedchain support multi-signature?
 --------------------------------------
 
-Multi-signature is supported. Permissions are expressed using a list of public keys, and a number of require signatures. If you provide 3 public keys, and require 2 signatures, you have a 2-of-3 multi-signature account. Read about :ref:`dynamic permissions <dynamic-permissions>` to learn more about it.
+Multi-signature is supported. Permissions are expressed using a list of public keys, and a number of require signatures. If you provide 3 public keys, and require 2 signatures, you have a 2-of-3 multi-signature account. Read about `dynamic permissions <dynamic-permissions>` to learn more about it.
 
 Getting started with the wallet
 ===============================
 
-Tedchain Server exposes a :ref:`public HTTP API <http-api>`, which can be called by any program capable of making HTTP calls.
+Tedchain Server exposes a `public HTTP API <http-api>`, which can be called by any program capable of making HTTP calls.
 
 To wrap all those operations in a user-friendly user interface, we also provide a client: the Tedchain Wallet.
 
@@ -138,7 +138,7 @@ Your account should have been updated with the newly issued asset.
 
 ![alt tag](https://i.imgur.com/MzwoOEV.png)
 
-Tip: You can use the "Edit Asset Definition" box in the asset issuance page to define :ref:`metadata <asset-metadata>` about your asset, such as a name and icon.
+Tip: You can use the "Edit Asset Definition" box in the asset issuance page to define `metadata <asset-metadata>` about your asset, such as a name and icon.
 
 Send a payment
 --------------
@@ -163,14 +163,14 @@ The wallet also has admin tools built-in.
 Ledger tree view
 ----------------
 
-The ledger tree view displays a visual representation of the :ref:`account hierarchy <account-hierarchy>`. The details of the record selected on the left will be showed on the right hand side.
+The ledger tree view displays a visual representation of the `account hierarchy <account-hierarchy>`. The details of the record selected on the left will be showed on the right hand side.
 
 ![alt tag](https://i.imgur.com/XQa7sz6.png)
 
 Alias editor
 ------------
 
-The alias editor lets you configure :ref:`aliases <aliases>` for specific paths. After an alias has been set, it is possible to send funds to the alias directly using the ``@`` prefix. The wallet will automatically resolve the alias.
+The alias editor lets you configure `aliases <aliases>` for specific paths. After an alias has been set, it is possible to send funds to the alias directly using the ``@`` prefix. The wallet will automatically resolve the alias.
 
 Note: In the default permission layout, aliases can only be modified by an administrator.
 
@@ -247,12 +247,12 @@ You should not see any error:
 
 Tip: You can also run the Tedchain Docker container in the foreground by running ``docker-compose up`` and omitting the ``-d`` switch.
 
-Now that you have a server running, you can connect to the server with a :ref:`client <tedchain-client>`.
+Now that you have a server running, you can connect to the server with a `client <tedchain-client>`.
 
 Configuring admin keys
 ----------------------
 
-Use the :ref:`client <tedchain-client>` to generate a seed, and derive it into an address. Once you have an address, you can use it as an admin address on your server instance. To do so, update ``data/config.json`` and add it to the ``admin_addresses`` list:
+Use the `client <tedchain-client>` to generate a seed, and derive it into an address. Once you have an address, you can use it as an admin address on your server instance. To do so, update ``data/config.json`` and add it to the ``admin_addresses`` list:
    
     // ...
     "admin_addresses": [
@@ -260,7 +260,7 @@ Use the :ref:`client <tedchain-client>` to generate a seed, and derive it into a
     ],
     // ...
 
-Tip: Follow :ref:`these steps <create-info-record>` to configure the ``info`` record on your new instance. The ``info`` record is used by clients connecting to the instance to receive additional information about the instance they are connecting to.
+Tip: Follow `these steps <create-info-record>` to configure the ``info`` record on your new instance. The ``info`` record is used by clients connecting to the instance to receive additional information about the instance they are connecting to.
 
 Controlling the server
 ----------------------
@@ -276,7 +276,7 @@ To stop it, use:
 Running Tedchain
 =================
 
-Deploying Tedchain server can be done :ref:`through Docker <docker-deployment>`.
+Deploying Tedchain server can be done `through Docker <docker-deployment>`.
 
 This document explains how to deploy Tedchain directly on a machine without using docker.
 
@@ -325,7 +325,7 @@ The dependencies section of the ``project.json`` file references the external pr
 
 By defaut, this imports the Sqlite storage engine (``Tedchain.Sqlite``), the SQL Server storage engine (``Tedchain.SqlServer``), the permission-based validation module (``Tedchain.Validation.PermissionBased``), and the Blockchain anchoring module (``Tedchain.Anchoring.Blockchain``). Update this list with the modules (and versions) you want to import.
 
-You can then edit the ``data/config.json`` file to reference the :ref:`providers you want to use <configuration>`.
+You can then edit the ``data/config.json`` file to reference the `providers you want to use <configuration>`.
 
 Tip: For example, if you want to use the ``SQLite`` provider as a storage engine, you will need to make sure the ``Tedchain.Sqlite`` module is listed in the dependencies.
 
@@ -350,14 +350,14 @@ The transaction stream
 
 Tedchain server exposes a websocket endpoint (``/stream``) called the transaction stream. The transaction stream provides a live stream of transactions as they get committed into the ledger.
 
-Note: See the :ref:`documentation <stream-api-endpoint>` about the ``/stream`` endpoint for more details.
+Note: See the `documentation <stream-api-endpoint>` about the ``/stream`` endpoint for more details.
 
 Validator nodes
 ---------------
 
 The Tedchain Server node can function in two different modes: **validator mode** and **observer mode**.
 
-In validator mode, the node accepts transactions and validates them. Rules that make a transaction valid or invalid are customizable. They can be defined by the administrator of the validator node, and are a combination of :ref:`implicit rules <ledger-rules>`, and explicit permissions.
+In validator mode, the node accepts transactions and validates them. Rules that make a transaction valid or invalid are customizable. They can be defined by the administrator of the validator node, and are a combination of `implicit rules <ledger-rules>`, and explicit permissions.
 
 When a transaction is deemed valid, it gets committed into the ledger.
 
@@ -368,12 +368,12 @@ Observer nodes are nodes connecting to an upstream node, and downloading all tra
 
 It is not possible to submit a transaction for validation to an observer node, as it only has a read-only view of the ledger.
 
-Observer nodes have the ability to verify the integrity of their copy of the ledger through :ref:`anchors <anchoring>`.
+Observer nodes have the ability to verify the integrity of their copy of the ledger through `anchors <anchoring>`.
 
 Configuration
 -------------
 
-To configure a node to be in observer mode, the ``observer_mode`` section needs to exist in the :ref:`configuration file <master-observer-configuration>`, and the ``upstream_url`` must be set to the root URL of the upstream node.
+To configure a node to be in observer mode, the ``observer_mode`` section needs to exist in the `configuration file <master-observer-configuration>`, and the ``upstream_url`` must be set to the root URL of the upstream node.
 
 Anchoring and ledger integrity
 ==============================
@@ -391,7 +391,7 @@ By doing this, even if Tedchain is processing thousands of transactions per seco
 - The resolution can be tuned to further reduce that cost.
 - Tedchain can process thousands of transactions per second while remaining very cost-efficient.
 
-:ref:`"Observer nodes" <observer-nodes>` replicating all the verified transactions locally have the ability to compute their own version of the cumulative hash and compare it to the anchor in the Bitcoin blockchain.
+`"Observer nodes" <observer-nodes>` replicating all the verified transactions locally have the ability to compute their own version of the cumulative hash and compare it to the anchor in the Bitcoin blockchain.
 
 Calculating the cumulative hash
 -------------------------------
@@ -403,7 +403,7 @@ The cumulative hash at a given height is calculated using the previous cumulativ
     cumulative_hash = SHA256( SHA256( previous_cumulative_hash + new_transaction_hash ) )
     
 - ``previous_cumulative_hash`` (32 bytes) is the cumulative hash at the previous height. At height 0 (when the ledger has no transaction), a 32 bytes buffer filled with zeroes is used.
-- ``new_transaction_hash`` (32 bytes) is the double SHA-256 hash of the :ref:`raw transaction <data-structures-transaction>` being added to the ledger.
+- ``new_transaction_hash`` (32 bytes) is the double SHA-256 hash of the `raw transaction <data-structures-transaction>` being added to the ledger.
 
 Both values are concatenated to form a 64 bytes array, then hashed using double SHA-256.
 
@@ -516,10 +516,10 @@ In the case of validator mode:
 
   * ``PermitAll`` indicates that all transactions are valid, regardless of who signed them. Use this mostly for testing.
   * ``DenyAll`` indicates that all transactions are invalid, regardless of who signed them. Use this to set the chain in read-only mode.
-  * See :ref:`this section <ledger-rules>` for more details about the implicit rules of the ``PermissionBased`` mode. The relevant configuration settings with the ``PermissionBased`` mode are the following:
+  * See `this section <ledger-rules>` for more details about the implicit rules of the ``PermissionBased`` mode. The relevant configuration settings with the ``PermissionBased`` mode are the following:
 
-    * ``validator_mode:validator:allow_p2pkh_accounts``: Boolean indicating whether :ref:`P2PKH accounts <p2pkh-accounts>` (``/p2pkh/<address>/``) are enabled.
-    * ``validator_mode:validator:allow_third_party_assets``: Boolean indicating whether :ref:`thrid party issuance accounts <third-party-issuance-accounts>` (``/asset/p2pkh/<address>/``) are enabled.
+    * ``validator_mode:validator:allow_p2pkh_accounts``: Boolean indicating whether `P2PKH accounts <p2pkh-accounts>` (``/p2pkh/<address>/``) are enabled.
+    * ``validator_mode:validator:allow_third_party_assets``: Boolean indicating whether `thrid party issuance accounts <third-party-issuance-accounts>` (``/asset/p2pkh/<address>/``) are enabled.
     * ``validator_mode:validator:admin_addresses``: List of strings representing all addresses with admin rights.
     * ``validator_mode:validator:version_byte``: The version byte to use when representing a public key using its Bitcoin address representation.
 
@@ -561,11 +561,11 @@ Storage engines are core components responsible for storing the transaction chai
 Setting the instance info on a new instance
 ===========================================
 
-The :ref:`ledger info record<ledger-info-record>` exposes meta-information about the ledger itself. It is used by clients that connect to the instance to retrieve informations such as the name of the instance, and the associated terms of service.
+The `ledger info record<ledger-info-record>` exposes meta-information about the ledger itself. It is used by clients that connect to the instance to retrieve informations such as the name of the instance, and the associated terms of service.
 
 After you have deployed a new instance, it is a good idea to create the info record. This can be done from the web interface.
 
-1. First, follow :ref:`these steps <tedchain-client>` to connect to the instance and log in. Make sure you log in with a seed that has admin access on this instance as the ``info`` record can only be modified by an administrator.
+1. First, follow `these steps <tedchain-client>` to connect to the instance and log in. Make sure you log in with a seed that has admin access on this instance as the ``info`` record can only be modified by an administrator.
 2. Go to the **Advanced** tab and click **Edit Ledger Info** on the left. The screen will show you a form that will let you edit the ledger name and other fields stored in the ``info`` record.
 
 Important: Make sure that the **Validator Root URL** is set to the same value as the ``root_url`` setting in the configuration file.
@@ -573,7 +573,7 @@ Important: Make sure that the **Validator Root URL** is set to the same value as
 Upgrading Tedchain server
 ==========================
 
-To upgrade an Tedchain deployment done :ref:`through Docker <docker-deployment>`, run the following commands:
+To upgrade an Tedchain deployment done `through Docker <docker-deployment>`, run the following commands:
 
     git reset --hard
     git pull
@@ -598,7 +598,7 @@ This document explain the few steps necessary to expose Tedchain through Nginx.
 Install Docker
 --------------
 
-Refer to the :ref:`base Docker deployment documentation <docker-deployment>` to find out how to install Docker and Docker Compose.
+Refer to the `base Docker deployment documentation <docker-deployment>` to find out how to install Docker and Docker Compose.
 
 Pull the Docker images through Docker Compose
 ---------------------------------------------
@@ -612,7 +612,7 @@ Clone the tedchain/docker-deployment repository from GitHub, and copy the config
     mkdir data
     cp templates/config.json data/config.json
 
-Edit the configuration file (``data/config.json``) as described in the :ref:`base Docker deployment documentation <docker-deployment>`.
+Edit the configuration file (``data/config.json``) as described in the `base Docker deployment documentation <docker-deployment>`.
 
 You can now start the server:
     
@@ -633,7 +633,7 @@ This ensures that a transaction is only valid for one specific instance of Tedch
 Solution
 --------
 
-To solve this, make sure the URL :ref:`set in your configuration file <master-observer-configuration>` (``validator_mode:root_url``) matches the URL that clients use to connect to your Tedchain instance. All the components of the URL must match:
+To solve this, make sure the URL `set in your configuration file <master-observer-configuration>` (``validator_mode:root_url``) matches the URL that clients use to connect to your Tedchain instance. All the components of the URL must match:
 
 * The scheme, e.g.: ``http://endpoint.com/`` vs ``https://endpoint.com/``
 * The hostname, e.g.: ``http://127.0.0.1/`` vs ``http://localhost/``
@@ -734,22 +734,22 @@ A transaction is a wapper around a mutation.
         bytes transaction_metadata = 3;
     }
     
-* ``mutation``: The mutation applied by the transaction. It is represented as a byte string but deserialized according to the :ref:`Mutation schema <data-structures-mutation>`.
+* ``mutation``: The mutation applied by the transaction. It is represented as a byte string but deserialized according to the `Mutation schema <data-structures-mutation>`.
 * ``timestamp``: A timestamp for the transaction.
 * ``transaction_metadata``: Arbitrary metadata to be stored in the mutation. This will typically contain a digital signature of the mutation by the required parties.
 
 Ledger structure
 ================
 
-At the core, an Tedchain ledger is a key-value store, represented by :ref:`records <data-structures-records>`. At the data store level, record keys can be any arbitrary byte string, however Tedchain Ledger expects a well defined structure for the record keys.
+At the core, an Tedchain ledger is a key-value store, represented by `records <data-structures-records>`. At the data store level, record keys can be any arbitrary byte string, however Tedchain Ledger expects a well defined structure for the record keys.
 
 Record keys
 -----------
 
 Record keys are UTF8-encoded strings. They are structured in three parts, separated by colons (``:``).
 
-1. **The record path**: A path in the :ref:`account hierarchy <account-hierarchy>` indicating where the record is situated.
-2. **The record type**: A value indicating the :ref:`type <record-types>` of the record.
+1. **The record path**: A path in the `account hierarchy <account-hierarchy>` indicating where the record is situated.
+2. **The record type**: A value indicating the `type <record-types>` of the record.
 3. **The record name**: The name of the record.
 
 The combination of these three values uniquely identify a record.
@@ -804,7 +804,7 @@ The ``ACC`` record is used for representing a balance for a given asset type. Th
 ``DATA`` record
 ---------------
 
-The ``DATA`` record is used to store arbitrary text data. The record name can be any valid UTF-8 string. It can be used to store things such as :ref:`asset metadata <asset-metadata>`, :ref:`symbolic links <goto-records>` within the accounting system, :ref:`permissions <dynamic-permissions>`, or any other important piece of arbitrary data that needs to be cryptographically secure.
+The ``DATA`` record is used to store arbitrary text data. The record name can be any valid UTF-8 string. It can be used to store things such as `asset metadata <asset-metadata>`, `symbolic links <goto-records>` within the accounting system, `permissions <dynamic-permissions>`, or any other important piece of arbitrary data that needs to be cryptographically secure.
 
 Method calls
 ============
@@ -839,7 +839,7 @@ The format of the JSON document is the following:
 
 Description of the payload:
 
-- ``mutation``: The hex-encoded mutation. The mutation is serialized using the :ref:`Mutation Protocol Buffers schema <data-structures-mutation>`.
+- ``mutation``: The hex-encoded mutation. The mutation is serialized using the `Mutation Protocol Buffers schema <data-structures-mutation>`.
 - ``signatures``: An array of documents with two properties, ``pub_key`` and ``signature``.
 
     - ``pub_key``: The hex-encoded public key used to sign.
@@ -850,7 +850,7 @@ Signing Process
 
 For producing the signatures:
 
-1. Serialize the mutation using the :ref:`Mutation Protocol Buffers schema <data-structures-mutation>`.
+1. Serialize the mutation using the `Mutation Protocol Buffers schema <data-structures-mutation>`.
 2. Hash the mutation byte string using double SHA256.
 3. Sign it with the relevant private key using Secp256k1. The matching public key must be submitted along with the signature.
 
@@ -919,7 +919,7 @@ Output
 
 The output is a WebSocket binary stream.
 
-Each message in the stream is the :ref:`serialized transaction <data-structures-transaction>`.
+Each message in the stream is the `serialized transaction <data-structures-transaction>`.
 
 Retrieve the chain info (``/info``)
 -----------------------------------
@@ -1173,7 +1173,7 @@ Default ledger rules
 Global rules
 ------------
 
-A transaction is made of multiple :ref:`record mutations <data-structures-records>`. ``ACC`` record mutations are subject to a balancing rule. The balancing rule works as follow:
+A transaction is made of multiple `record mutations <data-structures-records>`. ``ACC`` record mutations are subject to a balancing rule. The balancing rule works as follow:
 
 1. For every ``ACC`` record, the delta between the previous balance and the new proposed balance is calculated.
 2. The sum of all deltas **per asset type** is calculated.
@@ -1181,7 +1181,7 @@ A transaction is made of multiple :ref:`record mutations <data-structures-record
 
 This ensures every asset creation and destruction is recorded through an account in the system. This means however that at least one account must be able to have a negative balance. Usually, a special account is used to do so, and the ability to create a negative balance on an account requires special permissions.
 
-Tip: :ref:`Third-party asset issuance accounts <third-party-issuance-accounts>` are allowed to have negative balances.
+Tip: `Third-party asset issuance accounts <third-party-issuance-accounts>` are allowed to have negative balances.
 
 Aliases (``/aka/<name>/``)
 --------------------------
@@ -1204,7 +1204,7 @@ The client application should convert it internally into:
 Goto records (``goto``)
 -----------------------
 
-Goto records are special :ref:`DATA records <data-record>` instructing the client application to use a different account.
+Goto records are special `DATA records <data-record>` instructing the client application to use a different account.
 
 Goto records must have the special name ``goto``.
 
@@ -1227,7 +1227,7 @@ If the record doesn't exist, nothing happens and funds are sent to ``/account/al
 
 Then funds are sent instead to ``/account/beta/``.
 
-Note: It is possible and recommended for security reasons that the client application uses a :ref:`check-only record <check-only-record>` with the goto record to make sure the value of the goto record is still valid and hasn't changed when the transaction is validated.
+Note: It is possible and recommended for security reasons that the client application uses a `check-only record <check-only-record>` with the goto record to make sure the value of the goto record is still valid and hasn't changed when the transaction is validated.
 
 Asset definition record (``asdef``)
 -----------------------------------
@@ -1260,7 +1260,7 @@ The definition of these fields are the following:
 Ledger info record (``info``)
 -----------------------------
 
-Each Tedchain instance can store a :ref:`DATA record <data-record>` named ``info`` at the root path (``/``). In other words, the record key should be ``/:DATA:info``.
+Each Tedchain instance can store a `DATA record <data-record>` named ``info`` at the root path (``/``). In other words, the record key should be ``/:DATA:info``.
 
 The info record exposes meta-information about the ledger itself. The value must be a JSON document with the following schema:
 
@@ -1299,7 +1299,7 @@ Note: ``<address>`` is a base-58 address constructed in the same way a Bitcoin a
 Dynamic permissions
 ===================
 
-Tedchain supports an implicit permission layout through :ref:`P2PKH accounts <p2pkh-accounts>` (``/p2pkh/<address>/``) and :ref:`thrid party issuance accounts <third-party-issuance-accounts>` (``/asset/p2pkh/<address>/``). It is also possible to dynamically define permissions by submitting transactions modifying a special record: the ``acl`` record.
+Tedchain supports an implicit permission layout through `P2PKH accounts <p2pkh-accounts>` (``/p2pkh/<address>/``) and `thrid party issuance accounts <third-party-issuance-accounts>` (``/asset/p2pkh/<address>/``). It is also possible to dynamically define permissions by submitting transactions modifying a special record: the ``acl`` record.
 
 Access Control Lists
 --------------------
@@ -1410,7 +1410,7 @@ This way, funds can only circulate amongst "known" users.
 Initial configuration
 ---------------------
 
-The Tedchain instance must be configured with both :ref:`P2PKH accounts <p2pkh-accounts>` and :ref:`thrid party issuance accounts <third-party-issuance-accounts>` disabled. The settings ``validator_mode:validator:allow_p2pkh_accounts`` and ``validator_mode:validator:allow_third_party_assets`` must both be set to false to achieve this. See :ref:`this section <master-observer-configuration>` for more details.
+The Tedchain instance must be configured with both `P2PKH accounts <p2pkh-accounts>` and `thrid party issuance accounts <third-party-issuance-accounts>` disabled. The settings ``validator_mode:validator:allow_p2pkh_accounts`` and ``validator_mode:validator:allow_third_party_assets`` must both be set to false to achieve this. See `this section <master-observer-configuration>` for more details.
 
 With this configuration, by default, users have no rights, while administrators have all rights. It is not possible for any normal user to either send or receive tokens.
 
@@ -1426,14 +1426,14 @@ Creating the access rights
 
 Once the company has validated the identity of the user, it can create an account on Tedchain for that user, and associate her username with her public key.
 
-:ref:`Aliases <aliases>` are based on a special path (``/aka/<alias>/``). Assuming that the username of the user is ``alice``, we need to:
+`Aliases <aliases>` are based on a special path (``/aka/<alias>/``). Assuming that the username of the user is ``alice``, we need to:
 
 1. Allow other users to send funds to ``/aka/alice/`` (and subaccounts).
 2. Allow Alice's public key to be used to spend funds on ``/aka/alice/`` (and subaccounts).
 
 This can be achieved by creating an ``acl`` record under ``/aka/alice/``.
 
-Tip: See the documentation about :ref:`dynamic permissions <dynamic-permissions>` for more details.
+Tip: See the documentation about `dynamic permissions <dynamic-permissions>` for more details.
 
 The record ``/aka/alice/:DATA:acl`` must be created and set to:
 
