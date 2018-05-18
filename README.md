@@ -55,19 +55,19 @@ To familiarize yourself with Tedchain, you can:
 Frequently Asked Questions
 --------------------------
 
-Is Tedchain a block chain?
+Is Tedchain a blockchain?
 --------------------------
 
-Tedchain falls under the umbrella of Blockchain technology. However, if we take the term "block chain" literally, Tedchain is not a "block chain", but a close cousin. A block chain is a data structure that orders blocks of transactions and links them cryptographically through hashing.
+Tedchain falls under the umbrella of Blockchain technology. However, if we take the term "blockchain" literally, Tedchain is not a "blockchain", but a close cousin. A blockchain is a data structure that orders blocks of transactions and links them cryptographically through hashing.
 
-Tedchain doesn't use the concept of blocks. Transactions are directly chained with one another, and they are no longer grouped in blocks. Having to group transactions in blocks introduces a delay. Even if some systems manage to reduce the block time to just a few seconds, a few seconds is still a long time for latency-sensitive applications, such as trading. In Openchain, transactions are linked to the chain as soon as they are submitted to the network. As a result, Openchain is able to offer real-time confirmations.
+Tedchain doesn't use the concept of blocks. Transactions are directly chained with one another, and they are no longer grouped in blocks. Having to group transactions in blocks introduces a delay. Even if some systems manage to reduce the block time to just a few seconds, a few seconds is still a long time for latency-sensitive applications, such as trading. In Tedchain, transactions are linked to the chain as soon as they are submitted to the network. As a result, Tedchain is able to offer real-time confirmations.
 
-This means that a more appropriate term for Tedchain is a "transaction chain" rather than a "block chain".
+This means that a more appropriate term for Tedchain is a "transaction chain" rather than a "blockchain".
 
 Is Tedchain a sidechain?
 ------------------------
 
-It is possible to use a pegging module that will act as a bridge between a Blockchain (such as Bitcoin) and an Tedchain instance. When Bitcoins are sent to a specific address, a proxy for those coins will be created on the Openchain instance. Later on, these proxy tokens can be redeemed to unlock the Bitcoins on the main chain. This setup creates a 2-way peg between Bitcoin and the Openchain instance. In that scenario, the Openchain instance is behaving as a sidechain.
+It is possible to use a pegging module that will act as a bridge between a Blockchain (such as Bitcoin) and an Tedchain instance. When Bitcoins are sent to a specific address, a proxy for those coins will be created on the Tedchain instance. Later on, these proxy tokens can be redeemed to unlock the Bitcoins on the main chain. This setup creates a 2-way peg between Bitcoin and the Tedchain instance. In that scenario, the Tedchain instance is behaving as a sidechain.
 
 The pegging module is optional, and an instance doesn't have to be setup as a sidechain if that is not required.
 
@@ -198,7 +198,7 @@ Then install Docker Compose:
 Install Tedchain Server
 ------------------------
 
-Clone the tedchain/docker repository from GitHub, and copy the configuration files from the templates provided.
+Clone the tedchain/docker-deployment repository from GitHub, and copy the configuration files from the templates provided.
 
     git clone https://github.com/tedchain/docker-deployment.git tedchain
     cd tedchain
@@ -290,17 +290,17 @@ Download the project files
 
 Download the ``project.json``, ``Program.cs`` and ``config.json`` files from GitHub, then restore the NuGet dependencies. On Linux:
 
-    $ wget https://raw.githubusercontent.com/openchain/openchain/v0.6.2/src/Openchain/project.json
-    $ wget https://raw.githubusercontent.com/openchain/openchain/v0.6.2/src/Openchain/Program.cs
-    $ wget https://raw.githubusercontent.com/openchain/openchain/v0.6.2/src/Openchain/data/config.json -P data
+    $ wget https://github.com/tedchain/tedchain-technology/blob/master/src/Tedchain/project.json
+    $ wget https://github.com/tedchain/tedchain-technology/blob/master/src/Tedchain/Program.cs
+    $ wget https://github.com/tedchain/tedchain-technology/blob/master/src/Tedchain/data/config.json -P data
     $ dotnet restore
 
 Note: On Windows, simply download the files manually using your browser, then run ``dotnet restore``.
 
-Run Openchain Server
+Run Tedchain Server
 --------------------
 
-Run openchain server using the following command:
+Run tedchain server using the following command:
 
     $ dotnet run
 
@@ -315,23 +315,23 @@ The dependencies section of the ``project.json`` file references the external pr
         "type": "platform"
       },
       "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-      "Openchain.Server": "0.6.2",
+      "Tedchain.Server": "0.6.2",
     
-      "Openchain.Anchoring.Blockchain": "0.6.2",
-      "Openchain.Sqlite": "0.6.2",
-      "Openchain.SqlServer": "0.6.2",
-      "Openchain.Validation.PermissionBased": "0.6.2"
+      "Tedchain.Anchoring.Blockchain": "0.6.2",
+      "Tedchain.Sqlite": "0.6.2",
+      "Tedchain.SqlServer": "0.6.2",
+      "Tedchain.Validation.PermissionBased": "0.6.2"
     },
 
-By defaut, this imports the Sqlite storage engine (``Openchain.Sqlite``), the SQL Server storage engine (``Openchain.SqlServer``), the permission-based validation module (``Openchain.Validation.PermissionBased``), and the Blockchain anchoring module (``Openchain.Anchoring.Blockchain``). Update this list with the modules (and versions) you want to import.
+By defaut, this imports the Sqlite storage engine (``Tedchain.Sqlite``), the SQL Server storage engine (``Tedchain.SqlServer``), the permission-based validation module (``Tedchain.Validation.PermissionBased``), and the Blockchain anchoring module (``Tedchain.Anchoring.Blockchain``). Update this list with the modules (and versions) you want to import.
 
 You can then edit the ``data/config.json`` file to reference the :ref:`providers you want to use <configuration>`.
 
-Tip: For example, if you want to use the ``SQLite`` provider as a storage engine, you will need to make sure the ``Openchain.Sqlite`` module is listed in the dependencies.
+Tip: For example, if you want to use the ``SQLite`` provider as a storage engine, you will need to make sure the ``Tedchain.Sqlite`` module is listed in the dependencies.
 
 Make sure you run ``dotnet restore`` again after modifying project.json.
 
-Note: The Openchain.Server dependency is the only one that is always required. The version of the ``Openchain.Server`` package is the version of Openchain you will be running.
+Note: The Tedchain.Server dependency is the only one that is always required. The version of the ``Tedchain.Server`` package is the version of Tedchain you will be running.
 
 Updating the target platform
 ----------------------------
@@ -348,14 +348,14 @@ By default .NET Core (cross-platform) and the .NET Framework (Windows only) are 
 The transaction stream
 ======================
 
-Openchain server exposes a websocket endpoint (``/stream``) called the transaction stream. The transaction stream provides a live stream of transactions as they get committed into the ledger.
+Tedchain server exposes a websocket endpoint (``/stream``) called the transaction stream. The transaction stream provides a live stream of transactions as they get committed into the ledger.
 
 Note: See the :ref:`documentation <stream-api-endpoint>` about the ``/stream`` endpoint for more details.
 
 Validator nodes
 ---------------
 
-The Openchain Server node can function in two different modes: **validator mode** and **observer mode**.
+The Tedchain Server node can function in two different modes: **validator mode** and **observer mode**.
 
 In validator mode, the node accepts transactions and validates them. Rules that make a transaction valid or invalid are customizable. They can be defined by the administrator of the validator node, and are a combination of :ref:`implicit rules <ledger-rules>`, and explicit permissions.
 
@@ -378,18 +378,18 @@ To configure a node to be in observer mode, the ``observer_mode`` section needs 
 Anchoring and ledger integrity
 ==============================
 
-Openchain is capable of immutability by committing a hash of the entire ledger (the **cumulative hash**) onto a non-reversible Blockchain such as Bitcoin.
+Tedchain is capable of immutability by committing a hash of the entire ledger (the **cumulative hash**) onto a non-reversible Blockchain such as Bitcoin.
 
 Note: In the current version, the only anchoring mode available is the ``blockchain`` mode, based on the Bitcoin blockchain. Different anchoring modes will be available in the future, such as anchoring in a central repository.
 
 With the Bitcoin anchoring mode, one transaction is committed in every Bitcoin block, and contains the cumulative hash at the current time.
 
-By doing this, even if Openchain is processing thousands of transactions per second, only one transaction gets sent to the Bitcoin blockchain every 10 minutes. There are multiple benefits to this approach:
+By doing this, even if Tedchain is processing thousands of transactions per second, only one transaction gets sent to the Bitcoin blockchain every 10 minutes. There are multiple benefits to this approach:
 
-- The irreversibility of the Openchain ledger is ensured by the Bitcoin miners, therefore Openchain enjoys the same level of irreversibility as Bitcoin itself.
+- The irreversibility of the Tedchain ledger is ensured by the Bitcoin miners, therefore Tedchain enjoys the same level of irreversibility as Bitcoin itself.
 - At the maximum resolution (one anchor per block), no more than 4,320 transactions per month (in average) will be committed into the blockchain, which will cost about $10 per month (as of October 2015), regardless of the number of transactions processed.
 - The resolution can be tuned to further reduce that cost.
-- Openchain can process thousands of transactions per second while remaining very cost-efficient.
+- Tedchain can process thousands of transactions per second while remaining very cost-efficient.
 
 :ref:`"Observer nodes" <observer-nodes>` replicating all the verified transactions locally have the ability to compute their own version of the cumulative hash and compare it to the anchor in the Bitcoin blockchain.
 
@@ -418,14 +418,14 @@ The anchor is constructed in the following way:
 
     0x4f 0x43 <transaction count (8 bytes)> <cumulative hash (32 bytes)>
 
-- The first two bytes indicates that the output represents an Openchain anchor.
+- The first two bytes indicates that the output represents an Tedchain anchor.
 - The transaction count is the number of transactions being represented by the cumulative hash (the height). It's an unsigned 64 bits integer, encoded in big endian.
 - The cumulative hash is full cumulative hash (256 bits) as calculated in the previous section.
 
-Openchain Server Configuration
+Tedchain Server Configuration
 ==============================
 
-The configuration of Openchain server is handled through a JSON file named `config.json`. The file is stored under the ``data`` folder.
+The configuration of Tedchain server is handled through a JSON file named `config.json`. The file is stored under the ``data`` folder.
 
 It is possible to override a configuration value through environment variables. The name of the variable should be the concatenation of all the components of the path, separated by the character ``:``. For example: ``validator_mode:validator:allow_third_party_assets``.
 
@@ -502,7 +502,7 @@ If the storage provider is set to ``MSSQL``, the chain is stored using Microsoft
 
 * ``connection_string``: The connection string to the SQL Server database.
 
-Note: Third party storage engines can be build and used by Openchain. The ``provider`` setting is used to identify at runtime which storage engine should be instantiated.
+Note: Third party storage engines can be build and used by Tedchain. The ``provider`` setting is used to identify at runtime which storage engine should be instantiated.
 
 ``validator_mode`` and ``observer_mode`` sections
 -------------------------------------------------
@@ -512,7 +512,7 @@ These two sections are mutually exclusive. Depending whether the instance is set
 In the case of validator mode:
 
 * ``validator_mode:instance_seed``: A random string that should be unique to that instance. It is hashed to obtain a ``namespace`` specific to that instance.
-* ``validator_mode:validator:provider``: The type of validation performed by the Openchain instance when transactions are submitted. The only supported values currently are ``PermissionBased``, ``PermitAll`` and ``DenyAll``.
+* ``validator_mode:validator:provider``: The type of validation performed by the Tedchain instance when transactions are submitted. The only supported values currently are ``PermissionBased``, ``PermitAll`` and ``DenyAll``.
 
   * ``PermitAll`` indicates that all transactions are valid, regardless of who signed them. Use this mostly for testing.
   * ``DenyAll`` indicates that all transactions are invalid, regardless of who signed them. Use this to set the chain in read-only mode.
@@ -543,10 +543,10 @@ This section contains configuration settings relative to publishing an anchor to
 - ``storage:provider``: Value defining how to cache anchors locally. Currently, the only supported value is ``SQLite`` and caches data locally in a SQLite database.
 - ``storage:path``: The path of the local anchor cache database, relative to the ``wwwroot/App_Data`` folder.
 
-Openchain modules
+Tedchain modules
 =================
 
-Openchain uses an extensible architecture where modules can be swapped in and out depending on the functionality needed. Modules are selected by:
+Tedchain uses an extensible architecture where modules can be swapped in and out depending on the functionality needed. Modules are selected by:
 
 - Referencing the appropriate package in the ``project.json`` file. Packages are then pull automatically from NuGet.
 - Referencing the module in ``config.json``.
@@ -565,15 +565,15 @@ The :ref:`ledger info record<ledger-info-record>` exposes meta-information about
 
 After you have deployed a new instance, it is a good idea to create the info record. This can be done from the web interface.
 
-1. First, follow :ref:`these steps <openchain-client>` to connect to the instance and log in. Make sure you log in with a seed that has admin access on this instance as the ``info`` record can only be modified by an administrator.
+1. First, follow :ref:`these steps <tedchain-client>` to connect to the instance and log in. Make sure you log in with a seed that has admin access on this instance as the ``info`` record can only be modified by an administrator.
 2. Go to the **Advanced** tab and click **Edit Ledger Info** on the left. The screen will show you a form that will let you edit the ledger name and other fields stored in the ``info`` record.
 
 Important: Make sure that the **Validator Root URL** is set to the same value as the ``root_url`` setting in the configuration file.
 
-Upgrading Openchain server
+Upgrading Tedchain server
 ==========================
 
-To upgrade an Openchain deployment done :ref:`through Docker <docker-deployment>`, run the following commands:
+To upgrade an Tedchain deployment done :ref:`through Docker <docker-deployment>`, run the following commands:
 
     git reset --hard
     git pull
@@ -581,19 +581,19 @@ To upgrade an Openchain deployment done :ref:`through Docker <docker-deployment>
     docker-compose build
     docker-compose restart
     
-Note: If the new version you are upgrading to includes a configuration file schema change, don't forget to update the configuration file before restarting Openchain.
+Note: If the new version you are upgrading to includes a configuration file schema change, don't forget to update the configuration file before restarting Tedchain.
 
-Deploying Openchain in a production environment
+Deploying Tedchain in a production environment
 ===============================================
 
-In production, it is recommended to proxy the Openchain server behind a reverse proxy server such as Nginx. This architecture enables a number of possibilities:
+In production, it is recommended to proxy the Tedchain server behind a reverse proxy server such as Nginx. This architecture enables a number of possibilities:
 
-- Expose Openchain through SSL/TLS
-- Host multiple Openchain server instances on the same port
-- Change the URL path under which the Openchain server is being exposed
-- Route requests to different Openchain instances depending on the host name used
+- Expose Tedchain through SSL/TLS
+- Host multiple Tedchain server instances on the same port
+- Change the URL path under which the Tedchain server is being exposed
+- Route requests to different Tedchain instances depending on the host name used
 
-This document explain the few steps necessary to expose Openchain through Nginx.
+This document explain the few steps necessary to expose Tedchain through Nginx.
 
 Install Docker
 --------------
@@ -603,10 +603,10 @@ Refer to the :ref:`base Docker deployment documentation <docker-deployment>` to 
 Pull the Docker images through Docker Compose
 ---------------------------------------------
 
-Clone the openchain/docker repository from GitHub, and copy the configuration files from the templates provided.
+Clone the tedchain/docker-deployment repository from GitHub, and copy the configuration files from the templates provided.
 
-    git clone https://github.com/openchain/docker.git openchain
-    cd openchain
+    git clone https://github.com/tedchain/docker-deployment.git tedchain
+    cd tedchain
     cp templates/docker-compose-proxy.yml docker-compose.yml
     cp templates/nginx.conf nginx/nginx.conf
     mkdir data
@@ -628,12 +628,12 @@ Error "The namespace used in the transaction is invalid"
 
 You might receive this error message when submitting a transaction. You will get this error if the ``root_url`` set in the configuration doesn't match the namespace set by the client in the transaction. Clients will always use the URL they are connected to as the namespace.
 
-This ensures that a transaction is only valid for one specific instance of Openchain, and that it is not possible to reuse a signed transaction on multiple ledgers.
+This ensures that a transaction is only valid for one specific instance of Tedchain, and that it is not possible to reuse a signed transaction on multiple ledgers.
 
 Solution
 --------
 
-To solve this, make sure the URL :ref:`set in your configuration file <master-observer-configuration>` (``validator_mode:root_url``) matches the URL that clients use to connect to your Openchain instance. All the components of the URL must match:
+To solve this, make sure the URL :ref:`set in your configuration file <master-observer-configuration>` (``validator_mode:root_url``) matches the URL that clients use to connect to your Tedchain instance. All the components of the URL must match:
 
 * The scheme, e.g.: ``http://endpoint.com/`` vs ``https://endpoint.com/``
 * The hostname, e.g.: ``http://127.0.0.1/`` vs ``http://localhost/``
@@ -642,10 +642,10 @@ To solve this, make sure the URL :ref:`set in your configuration file <master-ob
 
 Important: Make sure you don't forget the trailing slash, as clients will always include it in the namespace. E.g.: ``https://endpoint.com/`` instead of ``https://endpoint.com``. 
 
-Openchain data structures
+Tedchain data structures
 =========================
 
-Openchain relies on several data structures for communication between clients and servers. These data structures are a key part of the Openchain API.
+Tedchain relies on several data structures for communication between clients and servers. These data structures are a key part of the Tedchain API.
 
 These data structures are serialized and deserialized using `Protocol Buffers <https://developers.google.com/protocol-buffers/>`_.
 
@@ -656,7 +656,7 @@ The full schema is the following:
 
     syntax = "proto3";
 
-    package Openchain;
+    package Tedchain;
 
     message RecordValue {
         bytes data = 1;
@@ -717,7 +717,7 @@ A mutation is a set of records atomically modifying the state of the data. They 
         bytes metadata = 3;
     }
 
-* ``namespace``: The namespace under which the records live. Generally, each instance of Openchain has its own namespace.
+* ``namespace``: The namespace under which the records live. Generally, each instance of Tedchain has its own namespace.
 * ``records``: A set of records to be modified atomically by this mutation. Each record is identified by its key. The version of each record in the mutation has to match the versions at the current time. If any version mismatches, then the entire mutation fails to apply. Records with an unspecified value don't cause updates, but their versions still have to match for the mutation to succeed.
 * ``metadata``: Arbitrary metadata to be stored in the mutation.
 
@@ -741,7 +741,7 @@ A transaction is a wapper around a mutation.
 Ledger structure
 ================
 
-At the core, an Openchain ledger is a key-value store, represented by :ref:`records <data-structures-records>`. At the data store level, record keys can be any arbitrary byte string, however Openchain Ledger expects a well defined structure for the record keys.
+At the core, an Tedchain ledger is a key-value store, represented by :ref:`records <data-structures-records>`. At the data store level, record keys can be any arbitrary byte string, however Tedchain Ledger expects a well defined structure for the record keys.
 
 Record keys
 -----------
@@ -775,7 +775,7 @@ The path is ``/`` (root path), the record type is ``DATA`` and the record name i
 Account hierarchy
 -----------------
 
-Openchain uses a hierarchy of accounts, similar to a file system. This adds a lot of interesting management options that systems like Bitcoin don't have.
+Tedchain uses a hierarchy of accounts, similar to a file system. This adds a lot of interesting management options that systems like Bitcoin don't have.
 
 .. image:: /images/closedloop-2.png
 
@@ -794,7 +794,7 @@ The syntax for an account path follows a number of rules:
 Record types
 ------------
 
-There are two valid record types as of this version of Openchain.
+There are two valid record types as of this version of Tedchain.
 
 ``ACC`` record
 --------------
@@ -809,9 +809,9 @@ The ``DATA`` record is used to store arbitrary text data. The record name can be
 Method calls
 ============
 
-The Openchain server exposes an HTTP API that can be used to interact with the data. The URL of an operation is constructed from the base URL of the endpoint, and concatenating it with the relative path of the operation being called.
+The Tedchain server exposes an HTTP API that can be used to interact with the data. The URL of an operation is constructed from the base URL of the endpoint, and concatenating it with the relative path of the operation being called.
 
-For example, if the base URL is ``https://www.openchain.org/endpoint/``, for calling the ``/record`` operation (query a record), the full URL should be ``https://www.openchain.org/endpoint/record``.
+For example, if the base URL is ``https://www.tedchain.network/endpoint/``, for calling the ``/record`` operation (query a record), the full URL should be ``https://www.tedchain.network/endpoint/record``.
 
 Submit a transaction (``/submit``)
 ----------------------------------
@@ -924,7 +924,7 @@ Each message in the stream is the :ref:`serialized transaction <data-structures-
 Retrieve the chain info (``/info``)
 -----------------------------------
 
-Get information about the Openchain instance.
+Get information about the Tedchain instance.
 
 **Method**: GET
 
@@ -944,7 +944,7 @@ The format of the JSON array is the following:
         "namespace": "<string>"
     }
 
-``namespace`` is the hex representation of the namespace expected in transactions submitted to the Openchain instance.
+``namespace`` is the hex representation of the namespace expected in transactions submitted to the Tedchain instance.
 
 Query an account (``/query/account``)
 -------------------------------------
@@ -1186,7 +1186,7 @@ Tip: :ref:`Third-party asset issuance accounts <third-party-issuance-accounts>` 
 Aliases (``/aka/<name>/``)
 --------------------------
 
-Openchain has the ability to define aliases for accounts, this simplify the user experience as users no longer have to remember a base-58 random string of characters.
+Tedchain has the ability to define aliases for accounts, this simplify the user experience as users no longer have to remember a base-58 random string of characters.
 
 To do so, clients should understand the following syntax as a valid account path: ``@<name>``, and turn it internally into ``/aka/<name>/``.
 
@@ -1260,7 +1260,7 @@ The definition of these fields are the following:
 Ledger info record (``info``)
 -----------------------------
 
-Each Openchain instance can store a :ref:`DATA record <data-record>` named ``info`` at the root path (``/``). In other words, the record key should be ``/:DATA:info``.
+Each Tedchain instance can store a :ref:`DATA record <data-record>` named ``info`` at the root path (``/``). In other words, the record key should be ``/:DATA:info``.
 
 The info record exposes meta-information about the ledger itself. The value must be a JSON document with the following schema:
 
@@ -1273,10 +1273,10 @@ The info record exposes meta-information about the ledger itself. The value must
 
 The definition of these fields are the following:
 
-* ``name``: The name of the Openchain instance.
-* ``validator_url``: The URL of the main validator for this Openchain instance.
-* ``tos``: The terms of service of the Openchain instance.
-* ``webpage_url``: A link to user-readable content where users can get more information about this Openchain instance.
+* ``name``: The name of the Tedchain instance.
+* ``validator_url``: The URL of the main validator for this Tedchain instance.
+* ``tos``: The terms of service of the Tedchain instance.
+* ``webpage_url``: A link to user-readable content where users can get more information about this Tedchain instance.
 
 Pay-To-Pubkey-Hash accounts (``/p2pkh/<address>/``)
 ---------------------------------------------------
@@ -1299,7 +1299,7 @@ Note: ``<address>`` is a base-58 address constructed in the same way a Bitcoin a
 Dynamic permissions
 ===================
 
-Openchain supports an implicit permission layout through :ref:`P2PKH accounts <p2pkh-accounts>` (``/p2pkh/<address>/``) and :ref:`thrid party issuance accounts <third-party-issuance-accounts>` (``/asset/p2pkh/<address>/``). It is also possible to dynamically define permissions by submitting transactions modifying a special record: the ``acl`` record.
+Tedchain supports an implicit permission layout through :ref:`P2PKH accounts <p2pkh-accounts>` (``/p2pkh/<address>/``) and :ref:`thrid party issuance accounts <third-party-issuance-accounts>` (``/asset/p2pkh/<address>/``). It is also possible to dynamically define permissions by submitting transactions modifying a special record: the ``acl`` record.
 
 Access Control Lists
 --------------------
@@ -1397,9 +1397,9 @@ How to: Configure a ledger to be closed-loop
 
 Financial institutions and companies letting their users transfer value often have to comply with regulations that require them to "know their customers" (KYC).
 
-It is possible to use Openchain in this configuration with little effort. This section describes the necessary steps.
+It is possible to use Tedchain in this configuration with little effort. This section describes the necessary steps.
 
-The goal of this walkthrough is to configure Openchain so that:
+The goal of this walkthrough is to configure Tedchain so that:
 
 1. Users go through an external registration process where they have their identity verified by the company administrating the ledger, and associate their identity with a public key.
 2. Only public keys matching a registered user can be used to send funds.
@@ -1410,7 +1410,7 @@ This way, funds can only circulate amongst "known" users.
 Initial configuration
 ---------------------
 
-The Openchain instance must be configured with both :ref:`P2PKH accounts <p2pkh-accounts>` and :ref:`thrid party issuance accounts <third-party-issuance-accounts>` disabled. The settings ``validator_mode:validator:allow_p2pkh_accounts`` and ``validator_mode:validator:allow_third_party_assets`` must both be set to false to achieve this. See :ref:`this section <master-observer-configuration>` for more details.
+The Tedchain instance must be configured with both :ref:`P2PKH accounts <p2pkh-accounts>` and :ref:`thrid party issuance accounts <third-party-issuance-accounts>` disabled. The settings ``validator_mode:validator:allow_p2pkh_accounts`` and ``validator_mode:validator:allow_third_party_assets`` must both be set to false to achieve this. See :ref:`this section <master-observer-configuration>` for more details.
 
 With this configuration, by default, users have no rights, while administrators have all rights. It is not possible for any normal user to either send or receive tokens.
 
@@ -1424,7 +1424,7 @@ As part of the process, a **private key** is generated and stored on the user's 
 Creating the access rights
 --------------------------
 
-Once the company has validated the identity of the user, it can create an account on Openchain for that user, and associate her username with her public key.
+Once the company has validated the identity of the user, it can create an account on Tedchain for that user, and associate her username with her public key.
 
 :ref:`Aliases <aliases>` are based on a special path (``/aka/<alias>/``). Assuming that the username of the user is ``alice``, we need to:
 
@@ -1485,7 +1485,7 @@ Addressing loss and theft of the private keys
 
 Inevitably, some users will lose the device on which their private key is stored.
 
-When this happens, they should report it to the company administering the Openchain instance. The company will first perform identity checks, then ask the user to generate a new key on a new device.
+When this happens, they should report it to the company administering the Tedchain instance. The company will first perform identity checks, then ask the user to generate a new key on a new device.
 
 The administrator can then simply update the relevant ``acl`` record to change the previous address into the new address, corresponding to the new key.
 
