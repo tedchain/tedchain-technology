@@ -1,0 +1,35 @@
+{
+  "version": "0.7.0-*",
+  "description": "SQLite implementation of the Tedchain storage layer.",
+  "authors": [ "Howard Larrison" ],
+  "copyright": "Copyright \u00A9 2014-2018 TEDLab Sciences Ltd",
+
+  "packOptions": {
+    "owners": [ "Tedchain" ],
+    "projectUrl": "https://www.tedchain.network/",
+    "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+    "iconUrl": "https://i.imgur.com/tepKuWo.png"
+  },
+
+  "buildOptions": {
+    "allowUnsafe": false,
+    "warningsAsErrors": true
+  },
+
+  "dependencies": {
+    "Microsoft.Data.SQLite": "1.1.*",
+    "Microsoft.AspNetCore.Hosting": "1.1.*",
+    "Tedchain.Infrastructure": "0.7.0"
+  },
+
+  "frameworks": {
+    "netstandard1.3": { },
+
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Data": "4.0.0.0",
+        "System.Xml": "4.0.0.0"
+      }
+    }
+  }
+}

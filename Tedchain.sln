@@ -1,0 +1,129 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{959253DF-ED16-4D50-9611-54E666C30B5C}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{62976C02-9AC7-450D-8634-FB01F357F47B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Sqlite", "src\Tedchain.Sqlite\Tedchain.Sqlite.xproj", "{B76EC900-3DC6-42B0-B480-B758E00507B6}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Sqlite.Tests", "test\Tedchain.Sqlite.Tests\Tedchain.Sqlite.Tests.xproj", "{AC31F4E0-A1AF-4418-823B-8BBD6BADE39F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Abstractions", "src\Tedchain.Abstractions\Tedchain.Abstractions.xproj", "{CA9A2FB3-5BB1-4730-A65E-16BD9831F303}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Abstractions.Tests", "test\Tedchain.Abstractions.Tests\Tedchain.Abstractions.Tests.xproj", "{38A38DEF-1B86-495E-8674-2AA135CE016A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Server", "src\Tedchain.Server\Tedchain.Server.xproj", "{C24C1145-878A-476A-AC93-6A272BE3D139}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.SqlServer", "src\Tedchain.SqlServer\Tedchain.SqlServer.xproj", "{C7FF6ABA-0D92-42E1-9719-F294ED7F7DA1}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.SqlServer.Tests", "test\Tedchain.SqlServer.Tests\Tedchain.SqlServer.Tests.xproj", "{D3D41AAF-F8C0-4E2C-8759-46CE60A376F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{F2E02870-506A-46D6-960F-B7DA38607B5E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tedchain.SqlServer.Schema", "tools\Tedchain.SqlServer.Schema\Tedchain.SqlServer.Schema.sqlproj", "{B7AE3B37-042A-4083-B227-CBE1FAF40644}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Validation.PermissionBased", "src\Tedchain.Validation.PermissionBased\Tedchain.Validation.PermissionBased.xproj", "{3BA6CCC3-432A-4B3E-8D46-5E48A2F44DA3}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Validation.PermissionBased.Tests", "test\Tedchain.Validation.PermissionBased.Tests\Tedchain.Validation.PermissionBased.Tests.xproj", "{8632CE95-DD49-4546-A291-869E8A11C7F5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Infrastructure", "src\Tedchain.Infrastructure\Tedchain.Infrastructure.xproj", "{F348FDBD-8D12-4CD7-B55B-2E52FCFA8C71}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Infrastructure.Tests", "test\Tedchain.Infrastructure.Tests\Tedchain.Infrastructure.Tests.xproj", "{91B5C8B9-602C-4843-A2BE-DA82B3F7449B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain.Anchoring.Blockchain", "src\Tedchain.Anchoring.Blockchain\Tedchain.Anchoring.Blockchain.xproj", "{B392C570-EFCC-4684-B7D8-0A645B49EAED}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tedchain", "src\Tedchain\Tedchain.xproj", "{5F5B4FED-56A4-4F1C-ABE6-983C17405FFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B76EC900-3DC6-42B0-B480-B758E00507B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76EC900-3DC6-42B0-B480-B758E00507B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76EC900-3DC6-42B0-B480-B758E00507B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76EC900-3DC6-42B0-B480-B758E00507B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC31F4E0-A1AF-4418-823B-8BBD6BADE39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC31F4E0-A1AF-4418-823B-8BBD6BADE39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC31F4E0-A1AF-4418-823B-8BBD6BADE39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC31F4E0-A1AF-4418-823B-8BBD6BADE39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9A2FB3-5BB1-4730-A65E-16BD9831F303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9A2FB3-5BB1-4730-A65E-16BD9831F303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9A2FB3-5BB1-4730-A65E-16BD9831F303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9A2FB3-5BB1-4730-A65E-16BD9831F303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A38DEF-1B86-495E-8674-2AA135CE016A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A38DEF-1B86-495E-8674-2AA135CE016A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A38DEF-1B86-495E-8674-2AA135CE016A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A38DEF-1B86-495E-8674-2AA135CE016A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24C1145-878A-476A-AC93-6A272BE3D139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24C1145-878A-476A-AC93-6A272BE3D139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24C1145-878A-476A-AC93-6A272BE3D139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24C1145-878A-476A-AC93-6A272BE3D139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FF6ABA-0D92-42E1-9719-F294ED7F7DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FF6ABA-0D92-42E1-9719-F294ED7F7DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FF6ABA-0D92-42E1-9719-F294ED7F7DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FF6ABA-0D92-42E1-9719-F294ED7F7DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3D41AAF-F8C0-4E2C-8759-46CE60A376F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D41AAF-F8C0-4E2C-8759-46CE60A376F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D41AAF-F8C0-4E2C-8759-46CE60A376F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D41AAF-F8C0-4E2C-8759-46CE60A376F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AE3B37-042A-4083-B227-CBE1FAF40644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7AE3B37-042A-4083-B227-CBE1FAF40644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7AE3B37-042A-4083-B227-CBE1FAF40644}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B7AE3B37-042A-4083-B227-CBE1FAF40644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7AE3B37-042A-4083-B227-CBE1FAF40644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AE3B37-042A-4083-B227-CBE1FAF40644}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3BA6CCC3-432A-4B3E-8D46-5E48A2F44DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA6CCC3-432A-4B3E-8D46-5E48A2F44DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA6CCC3-432A-4B3E-8D46-5E48A2F44DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA6CCC3-432A-4B3E-8D46-5E48A2F44DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8632CE95-DD49-4546-A291-869E8A11C7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8632CE95-DD49-4546-A291-869E8A11C7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8632CE95-DD49-4546-A291-869E8A11C7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8632CE95-DD49-4546-A291-869E8A11C7F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F348FDBD-8D12-4CD7-B55B-2E52FCFA8C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F348FDBD-8D12-4CD7-B55B-2E52FCFA8C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F348FDBD-8D12-4CD7-B55B-2E52FCFA8C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F348FDBD-8D12-4CD7-B55B-2E52FCFA8C71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B5C8B9-602C-4843-A2BE-DA82B3F7449B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B5C8B9-602C-4843-A2BE-DA82B3F7449B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B5C8B9-602C-4843-A2BE-DA82B3F7449B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B5C8B9-602C-4843-A2BE-DA82B3F7449B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B392C570-EFCC-4684-B7D8-0A645B49EAED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B392C570-EFCC-4684-B7D8-0A645B49EAED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B392C570-EFCC-4684-B7D8-0A645B49EAED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B392C570-EFCC-4684-B7D8-0A645B49EAED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5B4FED-56A4-4F1C-ABE6-983C17405FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5B4FED-56A4-4F1C-ABE6-983C17405FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5B4FED-56A4-4F1C-ABE6-983C17405FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5B4FED-56A4-4F1C-ABE6-983C17405FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B76EC900-3DC6-42B0-B480-B758E00507B6} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+		{AC31F4E0-A1AF-4418-823B-8BBD6BADE39F} = {62976C02-9AC7-450D-8634-FB01F357F47B}
+		{CA9A2FB3-5BB1-4730-A65E-16BD9831F303} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+		{38A38DEF-1B86-495E-8674-2AA135CE016A} = {62976C02-9AC7-450D-8634-FB01F357F47B}
+		{C24C1145-878A-476A-AC93-6A272BE3D139} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+		{C7FF6ABA-0D92-42E1-9719-F294ED7F7DA1} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+		{D3D41AAF-F8C0-4E2C-8759-46CE60A376F7} = {62976C02-9AC7-450D-8634-FB01F357F47B}
+		{B7AE3B37-042A-4083-B227-CBE1FAF40644} = {F2E02870-506A-46D6-960F-B7DA38607B5E}
+		{3BA6CCC3-432A-4B3E-8D46-5E48A2F44DA3} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+		{8632CE95-DD49-4546-A291-869E8A11C7F5} = {62976C02-9AC7-450D-8634-FB01F357F47B}
+		{F348FDBD-8D12-4CD7-B55B-2E52FCFA8C71} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+		{91B5C8B9-602C-4843-A2BE-DA82B3F7449B} = {62976C02-9AC7-450D-8634-FB01F357F47B}
+		{B392C570-EFCC-4684-B7D8-0A645B49EAED} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+		{5F5B4FED-56A4-4F1C-ABE6-983C17405FFD} = {69F65B5A-AA9C-4D9B-8F70-0D0D33052D87}
+	EndGlobalSection
+EndGlobal

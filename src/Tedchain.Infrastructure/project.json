@@ -1,0 +1,39 @@
+{
+  "version": "0.7.0-*",
+  "description": "Main Tedchain ledger management system.",
+  "authors": [ "Howard Larrison" ],
+  "copyright": "Copyright \u00A9 2014-2018 TEDLab Sciences Ltd",
+
+  "packOptions": {
+    "owners": [ "Tedchain" ],
+    "projectUrl": "https://www.tedchain.network/",
+    "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+    "iconUrl": "https://i.imgur.com/tepKuWo.png"
+  },
+
+  "dependencies": {
+    "Microsoft.Extensions.Configuration.Abstractions": "1.1.*",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.*",
+    "Tedchain.Abstractions": "0.7.0",
+    "Portable.BouncyCastle": "1.8.1.1"
+  },
+
+  "frameworks": {
+    "netstandard1.3": {
+      "dependencies": {
+        "System.Dynamic.Runtime": "4.3.0",
+        "System.ObjectModel": "4.3.0",
+        "System.Runtime.Numerics": "4.3.0",
+        "System.Text.Encoding": "4.3.0",
+        "System.Text.RegularExpressions": "4.3.0"
+      }
+    },
+
+    "net451": {
+      "frameworkAssemblies": {
+        "System.IO": "4.0.0.0",
+        "System.Numerics": "4.0.0.0"
+      }
+    }
+  }
+}
