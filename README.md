@@ -90,7 +90,9 @@ Connecting to a server
 
 The wallet is a client side application running in the browser, and capable of connecting to any Tedchain endpoint. It can connect to multiple endpoints at the same time, and pull information and submit transactions to multiple instances of Tedchain, however the first time you use it, you need to connect to at least one endpoint.
 
+
 ![alt tag](https://i.imgur.com/9uwWQaJ.png)
+
 
 The first page invites you to connect to an endpoint. Click the link to use the test endpoint provided by TedLab, then click "Check endpoint". The wallet will then try to connect to the Tedchain instance and retrieve the instance information.
 
