@@ -98,7 +98,7 @@ The first page invites you to connect to an endpoint. Click the link to use the 
 
 Confirm to connect to this endpoint.
 
-.. note:: The Tedchain wallet will memorize the endpoint you are connecting to, so you will only have to perform this step once.
+Note: The Tedchain wallet will memorize the endpoint you are connecting to, so you will only have to perform this step once.
 
 Logging in
 ----------
@@ -138,7 +138,7 @@ Your account should have been updated with the newly issued asset.
 
 .. image:: /images/wallet-8.png
 
-.. tip:: You can use the "Edit Asset Definition" box in the asset issuance page to define :ref:`metadata <asset-metadata>` about your asset, such as a name and icon.
+Tip: You can use the "Edit Asset Definition" box in the asset issuance page to define :ref:`metadata <asset-metadata>` about your asset, such as a name and icon.
 
 Send a payment
 --------------
@@ -172,7 +172,7 @@ Alias editor
 
 The alias editor lets you configure :ref:`aliases <aliases>` for specific paths. After an alias has been set, it is possible to send funds to the alias directly using the ``@`` prefix. The wallet will automatically resolve the alias.
 
-.. note:: In the default permission layout, aliases can only be modified by an administrator.
+Note: In the default permission layout, aliases can only be modified by an administrator.
 
 Tedchain Server Docker deployment
 ==================================
@@ -184,17 +184,13 @@ This document explains the few steps necessary to have the Tedchain server runni
 Install Docker
 --------------
 
-.. note:: This assumes you are running Linux. Use `these instructions <http://docs.docker.com/installation/windows/>`_ if you are running Windows, and `these instructions <http://docs.docker.com/installation/mac/>`_ if you are running OS X.
+Note: This assumes you are running Linux. Use `these instructions <http://docs.docker.com/installation/windows/>`_ if you are running Windows, and `these instructions <http://docs.docker.com/installation/mac/>`_ if you are running OS X.
 
 First, install Docker if you don't have it:
-
-.. code-block:: bash
 
     wget -qO- https://get.docker.com/ | sh
 
 Then install Docker Compose:
-
-.. code-block:: bash
 
     apt-get install python-pip
     pip install -U docker-compose
@@ -204,8 +200,6 @@ Install Tedchain Server
 
 Clone the tedchain/docker repository from GitHub, and copy the configuration files from the templates provided.
 
-.. code-block:: bash
-
     git clone https://github.com/tedchain/docker-deployment.git tedchain
     cd tedchain
     cp templates/docker-compose-direct.yml docker-compose.yml
@@ -214,14 +208,9 @@ Clone the tedchain/docker repository from GitHub, and copy the configuration fil
 
 Now, edit the configuration file (``data/config.json``):
 
-.. code-block:: bash
-
     nano data/config.json
 
 Set the ``instance_seed`` setting to a random (non-empty) string.
-
-.. code-block:: json
-   :emphasize-lines: 5
    
     [...]
       // Define transaction validation parameters
@@ -231,23 +220,17 @@ Set the ``instance_seed`` setting to a random (non-empty) string.
         "validator": {
     [...]
     
-.. note:: By default, the Tedchain server will run on port 8080. You can edit ``docker-compose.yml`` if you want to run on a non-default port.
+Note: By default, the Tedchain server will run on port 8080. You can edit ``docker-compose.yml`` if you want to run on a non-default port.
 
 You can now start the server:
-
-.. code-block:: bash
     
     docker-compose up -d
 
 This will start the Tedchain server in the background. To check that the server is running properly, check the docker logs:
 
-.. code-block:: bash
-
     docker logs tedchain-server
 
 You should not see any error:
-
-.. code-block:: bash
 
     info: General[0]
         [2016-07-10 18:20:10Z] Starting Tedchain v0.7.0
@@ -262,7 +245,7 @@ You should not see any error:
     Now listening on: http://0.0.0.0:8080
     Application started. Press Ctrl+C to shut down.
 
-.. tip:: You can also run the Tedchain Docker container in the foreground by running ``docker-compose up`` and omitting the ``-d`` switch.
+Tip: You can also run the Tedchain Docker container in the foreground by running ``docker-compose up`` and omitting the ``-d`` switch.
 
 Now that you have a server running, you can connect to the server with a :ref:`client <tedchain-client>`.
 
@@ -270,9 +253,6 @@ Configuring admin keys
 ----------------------
 
 Use the :ref:`client <tedchain-client>` to generate a seed, and derive it into an address. Once you have an address, you can use it as an admin address on your server instance. To do so, update ``data/config.json`` and add it to the ``admin_addresses`` list:
-
-.. code-block:: json
-   :emphasize-lines: 3
    
     // ...
     "admin_addresses": [
@@ -280,16 +260,16 @@ Use the :ref:`client <tedchain-client>` to generate a seed, and derive it into a
     ],
     // ...
 
-.. tip:: Follow :ref:`these steps <create-info-record>` to configure the ``info`` record on your new instance. The ``info`` record is used by clients connecting to the instance to receive additional information about the instance they are connecting to.
+Tip: Follow :ref:`these steps <create-info-record>` to configure the ``info`` record on your new instance. The ``info`` record is used by clients connecting to the instance to receive additional information about the instance they are connecting to.
 
 Controlling the server
 ----------------------
 
-To restart the server, use::
+To restart the server, use:
 
     docker-compose restart
     
-To stop it, use::
+To stop it, use:
 
     docker-compose stop
 	
@@ -310,21 +290,17 @@ Download the project files
 
 Download the ``project.json``, ``Program.cs`` and ``config.json`` files from GitHub, then restore the NuGet dependencies. On Linux:
 
-.. code-block:: bash
-
     $ wget https://raw.githubusercontent.com/openchain/openchain/v0.6.2/src/Openchain/project.json
     $ wget https://raw.githubusercontent.com/openchain/openchain/v0.6.2/src/Openchain/Program.cs
     $ wget https://raw.githubusercontent.com/openchain/openchain/v0.6.2/src/Openchain/data/config.json -P data
     $ dotnet restore
 
-.. note:: On Windows, simply download the files manually using your browser, then run ``dotnet restore``.
+Note: On Windows, simply download the files manually using your browser, then run ``dotnet restore``.
 
 Run Openchain Server
 --------------------
 
 Run openchain server using the following command:
-
-.. code-block:: bash
 
     $ dotnet run
 
@@ -332,9 +308,6 @@ Configuration
 -------------
 
 The dependencies section of the ``project.json`` file references the external providers pulled from NuGet:
-
-.. code-block:: json
-   :emphasize-lines: 9-12
 
     "dependencies": {
       "Microsoft.NETCore.App": {
@@ -354,18 +327,16 @@ By defaut, this imports the Sqlite storage engine (``Openchain.Sqlite``), the SQ
 
 You can then edit the ``data/config.json`` file to reference the :ref:`providers you want to use <configuration>`.
 
-.. tip:: For example, if you want to use the ``SQLite`` provider as a storage engine, you will need to make sure the ``Openchain.Sqlite`` module is listed in the dependencies.
+Tip: For example, if you want to use the ``SQLite`` provider as a storage engine, you will need to make sure the ``Openchain.Sqlite`` module is listed in the dependencies.
 
 Make sure you run ``dotnet restore`` again after modifying project.json.
 
-.. note:: The Openchain.Server dependency is the only one that is always required. The version of the ``Openchain.Server`` package is the version of Openchain you will be running.
+Note: The Openchain.Server dependency is the only one that is always required. The version of the ``Openchain.Server`` package is the version of Openchain you will be running.
 
 Updating the target platform
 ----------------------------
 
 The frameworks section of the project.json file lists the available target frameworks:
-
-.. code-block:: json
 
     "frameworks": {
       "netcoreapp1.0": {},
@@ -379,7 +350,7 @@ The transaction stream
 
 Openchain server exposes a websocket endpoint (``/stream``) called the transaction stream. The transaction stream provides a live stream of transactions as they get committed into the ledger.
 
-.. note:: See the :ref:`documentation <stream-api-endpoint>` about the ``/stream`` endpoint for more details.
+Note: See the :ref:`documentation <stream-api-endpoint>` about the ``/stream`` endpoint for more details.
 
 Validator nodes
 ---------------
@@ -389,8 +360,6 @@ The Openchain Server node can function in two different modes: **validator mode*
 In validator mode, the node accepts transactions and validates them. Rules that make a transaction valid or invalid are customizable. They can be defined by the administrator of the validator node, and are a combination of :ref:`implicit rules <ledger-rules>`, and explicit permissions.
 
 When a transaction is deemed valid, it gets committed into the ledger.
-
-.. _observer-nodes:
 
 Observer nodes
 --------------
@@ -411,7 +380,7 @@ Anchoring and ledger integrity
 
 Openchain is capable of immutability by committing a hash of the entire ledger (the **cumulative hash**) onto a non-reversible Blockchain such as Bitcoin.
 
-.. note:: In the current version, the only anchoring mode available is the ``blockchain`` mode, based on the Bitcoin blockchain. Different anchoring modes will be available in the future, such as anchoring in a central repository.
+Note: In the current version, the only anchoring mode available is the ``blockchain`` mode, based on the Bitcoin blockchain. Different anchoring modes will be available in the future, such as anchoring in a central repository.
 
 With the Bitcoin anchoring mode, one transaction is committed in every Bitcoin block, and contains the cumulative hash at the current time.
 
@@ -430,8 +399,6 @@ Calculating the cumulative hash
 The cumulative hash is updated every time a new transaction is added to the ledger.
 
 The cumulative hash at a given height is calculated using the previous cumulative hash and the hash of the new transaction being added to the ledger:
-
-.. code-block:: text
     
     cumulative_hash = SHA256( SHA256( previous_cumulative_hash + new_transaction_hash ) )
     
@@ -444,14 +411,10 @@ Blockchain anchor format
 ------------------------
 
 The Blockchain anchor is stored in the blockchain using an OP_RETURN operator, followed by a pushdata containing the anchor.
-
-.. code-block:: text
     
     OP_RETURN <anchor (42 bytes)>
 
 The anchor is constructed in the following way:
-
-.. code-block:: text
 
     0x4f 0x43 <transaction count (8 bytes)> <cumulative hash (32 bytes)>
 
@@ -470,8 +433,6 @@ config.json
 -----------
 
 Here is the default file:
-
-.. code-block:: json
    
     {
       "enable_transaction_stream": true,
@@ -541,9 +502,7 @@ If the storage provider is set to ``MSSQL``, the chain is stored using Microsoft
 
 * ``connection_string``: The connection string to the SQL Server database.
 
-.. note:: Third party storage engines can be build and used by Openchain. The ``provider`` setting is used to identify at runtime which storage engine should be instantiated.
-
-.. _master-observer-configuration:
+Note: Third party storage engines can be build and used by Openchain. The ``provider`` setting is used to identify at runtime which storage engine should be instantiated.
 
 ``validator_mode`` and ``observer_mode`` sections
 -------------------------------------------------
@@ -599,13 +558,10 @@ Storage engines
 
 Storage engines are core components responsible for storing the transaction chain and records.
 
-=================  ===========================================================================   ================================================================  ====================================================================
-Provider           Module                                                                        Description                                                       Maintainer
-=================  ===========================================================================   ================================================================  ====================================================================
-``SQLite``         `Openchain.Sqlite <https://www.nuget.org/packages/Openchain.Sqlite>`_         Stores the chain in a local Sqlite database.                      `Coinprism <https://github.com/openchain/openchain>`_
-``MsSQL``          `Openchain.SqlServer <https://www.nuget.org/packages/Openchain.SqlServer>`_   Stores the chain in a SQL Server database.                        `Coinprism <https://github.com/openchain/openchain>`_
-``MongoDB``        Openchain.MongoDb                                                             Stores the chain in a MongoDB database.                           `@fluce <https://github.com/openchain/mongodb-storage>`_
-=================  ===========================================================================   ================================================================  ====================================================================
+|Provider|Module|Description|Maintainer
+|``SQLite``|`Openchain.Sqlite <https://www.nuget.org/packages/Openchain.Sqlite>`|Stores the chain in a local Sqlite database.|`Coinprism <https://github.com/openchain/openchain>`
+|``MsSQL``|`Openchain.SqlServer <https://www.nuget.org/packages/Openchain.SqlServer>`|Stores the chain in a SQL Server database.|`Coinprism <https://github.com/openchain/openchain>`
+|``MongoDB``|Openchain.MongoDb|Stores the chain in a MongoDB database.|`@fluce <https://github.com/openchain/mongodb-storage>`_
 
 Setting the instance info on a new instance
 ===========================================
@@ -617,14 +573,12 @@ After you have deployed a new instance, it is a good idea to create the info rec
 1. First, follow :ref:`these steps <openchain-client>` to connect to the instance and log in. Make sure you log in with a seed that has admin access on this instance as the ``info`` record can only be modified by an administrator.
 2. Go to the **Advanced** tab and click **Edit Ledger Info** on the left. The screen will show you a form that will let you edit the ledger name and other fields stored in the ``info`` record.
 
-.. important:: Make sure that the **Validator Root URL** is set to the same value as the ``root_url`` setting in the configuration file.
+Important: Make sure that the **Validator Root URL** is set to the same value as the ``root_url`` setting in the configuration file.
 
 Upgrading Openchain server
 ==========================
 
 To upgrade an Openchain deployment done :ref:`through Docker <docker-deployment>`, run the following commands:
-
-.. code-block:: bash
 
     git reset --hard
     git pull
@@ -632,7 +586,7 @@ To upgrade an Openchain deployment done :ref:`through Docker <docker-deployment>
     docker-compose build
     docker-compose restart
     
-.. note:: If the new version you are upgrading to includes a configuration file schema change, don't forget to update the configuration file before restarting Openchain.
+Note: If the new version you are upgrading to includes a configuration file schema change, don't forget to update the configuration file before restarting Openchain.
 
 Deploying Openchain in a production environment
 ===============================================
@@ -656,8 +610,6 @@ Pull the Docker images through Docker Compose
 
 Clone the openchain/docker repository from GitHub, and copy the configuration files from the templates provided.
 
-.. code-block:: bash
-
     git clone https://github.com/openchain/docker.git openchain
     cd openchain
     cp templates/docker-compose-proxy.yml docker-compose.yml
@@ -668,17 +620,13 @@ Clone the openchain/docker repository from GitHub, and copy the configuration fi
 Edit the configuration file (``data/config.json``) as described in the :ref:`base Docker deployment documentation <docker-deployment>`.
 
 You can now start the server:
-
-.. code-block:: bash
     
     docker-compose up -d
 
-.. note:: By default, Nginx will run on port 80.
+Note: By default, Nginx will run on port 80.
 
 Troubleshooting
 ===============
-
-.. _invalid-namespace-error:
 
 Error "The namespace used in the transaction is invalid"
 --------------------------------------------------------
@@ -697,7 +645,7 @@ To solve this, make sure the URL :ref:`set in your configuration file <master-ob
 * The port, e.g.: ``http://endpoint.com:80/`` vs ``http://endpoint.com/``
 * The path, e.g.: ``http://endpoint.com/path/`` vs ``http://endpoint.com/``
 
-.. important:: Make sure you don't forget the trailing slash, as clients will always include it in the namespace. E.g.: ``https://endpoint.com/`` instead of ``https://endpoint.com``. 
+Important: Make sure you don't forget the trailing slash, as clients will always include it in the namespace. E.g.: ``https://endpoint.com/`` instead of ``https://endpoint.com``. 
 
 Openchain data structures
 =========================
@@ -710,8 +658,6 @@ Schema
 ------
 
 The full schema is the following:
-
-.. code-block:: protobuf
 
     syntax = "proto3";
 
@@ -739,16 +685,12 @@ The full schema is the following:
         bytes transaction_metadata = 3;
     }
 
-.. note:: The schema uses the version 3 of Protocol Buffers.
-
-.. _data-structures-records:
+Note: The schema uses the version 3 of Protocol Buffers.
 
 Record
 ------
 
 A record object represents the intent to modify the value of a record in the data store. The key, value and version of a record can be any arbitrary byte string.
-
-.. code-block:: protobuf
 
     message Record {
         bytes key = 1;
@@ -762,8 +704,6 @@ A record object represents the intent to modify the value of a record in the dat
 
 A record that has never been set has a ``value`` and ``version`` both equal to an empty byte string.
 
-.. _check-only-record:
-
 Check-only records
 ------------------
 
@@ -771,14 +711,10 @@ If a record object has a null ``value`` field, the record object is called a **c
 
 This provides a way to ensure that a given record has not been modified between the moment the transaction was created and the moment it gets validated, even if the record doesn't have to be modified.
 
-.. _data-structures-mutation:
-
 Mutation
 --------
 
 A mutation is a set of records atomically modifying the state of the data. They are typically generated by a client, signed, then sent to the validator along with the signatures.
-
-.. code-block:: protobuf
 
     message Mutation {
         bytes namespace = 1;
@@ -792,14 +728,10 @@ A mutation is a set of records atomically modifying the state of the data. They 
 
 The version of all updated records after a mutation becomes the hash of that mutation.
 
-.. _data-structures-transaction:
-
 Transaction
 -----------
 
 A transaction is a wapper around a mutation.
-
-.. code-block:: protobuf
 
     message Transaction {
         bytes mutation = 1;
@@ -830,7 +762,7 @@ The combination of these three values uniquely identify a record.
 Example 1
 ---------
 
-.. code::
+Code:
 
     /p2pkh/mfiCwNxuFYMtb5ytCacgzDAineD2GNCnYo/:ACC:/asset/p2pkh/n15g8F3sVLufwvPmmX7tYPWrGGbGSbcaEB/
 
@@ -839,13 +771,11 @@ The path is ``/p2pkh/mfiCwNxuFYMtb5ytCacgzDAineD2GNCnYo/``, the record type is `
 Example 2
 ---------
 
-.. code::
+Code:
 
     /:DATA:info
 
 The path is ``/`` (root path), the record type is ``DATA`` and the record name is ``info``.
-    
-.. _account-hierarchy:
 
 Account hierarchy
 -----------------
@@ -876,8 +806,6 @@ There are two valid record types as of this version of Openchain.
 
 The ``ACC`` record is used for representing a balance for a given asset type. The name of the record must be a path that represents the asset type. The value must be a 64-bits signed integer encoded in big endian. The value represents the current balance for the given account and the given asset type.
 
-.. _data-record:
-
 ``DATA`` record
 ---------------
 
@@ -903,8 +831,6 @@ Inputs
 The input is a JSON document passed as part of the body of the request.
 
 The format of the JSON document is the following:
-
-.. code-block:: json
 
     {
         "mutation": "<string>",
@@ -933,14 +859,12 @@ For producing the signatures:
 2. Hash the mutation byte string using double SHA256.
 3. Sign it with the relevant private key using Secp256k1. The matching public key must be submitted along with the signature.
 
-.. important:: You must submit the exact byte string as obtained after step 1. If it modified, the hash won't match and the signature will then be invalid.
+Important: You must submit the exact byte string as obtained after step 1. If it modified, the hash won't match and the signature will then be invalid.
 
 Outputs
 -------
 
 The output is a JSON document passed as part of the body of the response.
-
-.. code-block:: json
 
     {
         "transaction_hash": "<string>"
@@ -971,8 +895,6 @@ The output is a JSON document passed as part of the body of the response.
 
 The format of the JSON document is the following:
 
-.. code-block:: json
-
     {
         "key": "<string>",
         "value": "<string>",
@@ -984,8 +906,6 @@ The fields are the following:
 * ``key``: The hex-encoded key of the record.
 * ``value``: The hex-encoded value of the record.
 * ``version``: The hex-encoded version of the record.
-
-.. _stream-api-endpoint:
 
 Transaction stream (``/stream``)
 --------------------------------
@@ -1029,8 +949,6 @@ The output is a JSON array passed as part of the body of the response.
 
 The format of the JSON array is the following:
 
-.. code-block:: json
-
     {
         "namespace": "<string>"
     }
@@ -1059,8 +977,6 @@ Output
 The output is a JSON array passed as part of the body of the response.
 
 The format of the JSON array is the following:
-
-.. code-block:: json
 
     [
         {
@@ -1104,8 +1020,6 @@ The format of the JSON document depends on the ``format`` argument:
 
 1. ``raw`` output format (default):
 
-.. code-block:: json
-
     {
         "raw": "<string>"
     }
@@ -1113,8 +1027,6 @@ The format of the JSON document depends on the ``format`` argument:
 The ``raw`` property contains the serialized transaction.
     
 2. ``json`` output format
-
-.. code-block:: json
 
     {
         "transaction_hash": "<string>",
@@ -1145,9 +1057,7 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-==============  ==============
-``key``         The hex-encoded key of the record being queried.
-==============  ==============
+``key`` The hex-encoded key of the record being queried.
 
 Output
 ------
@@ -1155,8 +1065,6 @@ Output
 The output is a JSON document passed as part of the body of the response.
 
 The format of the JSON document is the following:
-
-.. code-block:: json
 
     {
         "key": "<string>",
@@ -1184,9 +1092,7 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-=================  ==============
-``key``            The key of the record of which mutations are being retrieved.
-=================  ==============
+``key`` The key of the record of which mutations are being retrieved.
 
 Output
 ------
@@ -1194,8 +1100,6 @@ Output
 The output is a JSON document passed as part of the body of the response.
 
 The format of the JSON document is the following:
-
-.. code-block:: json
 
     [
         {
@@ -1228,8 +1132,6 @@ The output is a JSON document passed as part of the body of the response.
 
 The format of the JSON document is the following:
 
-.. code-block:: json
-
     [
         {
             "key": "<string>",
@@ -1256,10 +1158,8 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-=================  ==============
-``name``           The name of the records being queried.
-``type``           The type of the records being queried.
-=================  ==============
+``name``: The name of the records being queried.
+``type``: The type of the records being queried.
 
 Output
 ------
@@ -1267,8 +1167,6 @@ Output
 The output is a JSON document passed as part of the body of the response.
 
 The format of the JSON document is the following:
-
-.. code-block:: json
 
     [
         {
@@ -1298,9 +1196,7 @@ A transaction is made of multiple :ref:`record mutations <data-structures-record
 
 This ensures every asset creation and destruction is recorded through an account in the system. This means however that at least one account must be able to have a negative balance. Usually, a special account is used to do so, and the ability to create a negative balance on an account requires special permissions.
 
-.. tip:: :ref:`Third-party asset issuance accounts <third-party-issuance-accounts>` are allowed to have negative balances.
-
-.. _aliases:
+Tip: :ref:`Third-party asset issuance accounts <third-party-issuance-accounts>` are allowed to have negative balances.
 
 Aliases (``/aka/<name>/``)
 --------------------------
@@ -1312,15 +1208,13 @@ To do so, clients should understand the following syntax as a valid account path
 Example
 -------
 
-If a user wants to send funds to the following account::
+If a user wants to send funds to the following account:
 
     @bank
     
-The client application should convert it internally into::
+The client application should convert it internally into:
 
     /aka/bank/
-
-.. _goto-records:
 
 Goto records (``goto``)
 -----------------------
@@ -1334,23 +1228,21 @@ When a client application sends funds to a path, it must first look for a ``DATA
 Example
 -------
 
-If a user wants to send funds to the following account::
+If a user wants to send funds to the following account:
 
     /account/alpha/
     
-The client must first check the existance of a record with the following key::
+The client must first check the existance of a record with the following key:
 
     /account/alpha/:DATA:goto
 
-If the record doesn't exist, nothing happens and funds are sent to ``/account/alpha/``. If the record exists, assuming its value is::
+If the record doesn't exist, nothing happens and funds are sent to ``/account/alpha/``. If the record exists, assuming its value is:
 
     /account/beta/
 
 Then funds are sent instead to ``/account/beta/``.
 
-.. note:: It is possible and recommended for security reasons that the client application uses a :ref:`check-only record <check-only-record>` with the goto record to make sure the value of the goto record is still valid and hasn't changed when the transaction is validated.
-
-.. _asset-metadata:
+Note: It is possible and recommended for security reasons that the client application uses a :ref:`check-only record <check-only-record>` with the goto record to make sure the value of the goto record is still valid and hasn't changed when the transaction is validated.
 
 Asset definition record (``asdef``)
 -----------------------------------
@@ -1362,13 +1254,11 @@ The asset definition record can be used to record this information. The asset de
 Example
 -------
 
-In order to associate information with the asset represented by path ``/asset/gold/``, the following record must be set::
+In order to associate information with the asset represented by path ``/asset/gold/``, the following record must be set:
 
     /asset/gold/:DATA:asdef
     
 The value of the record is a UTF-8 string representing a JSON document with the following schema:
-
-.. code-block:: json
 
     {
         name: '<string>',
@@ -1382,16 +1272,12 @@ The definition of these fields are the following:
 * ``name_short``: The short name of the asset. This is used to denominate amounts (e.g.: ``USD``, ``XAU``)
 * ``icon_url``: The URL to an icon representing the asset.
 
-.. _ledger-info-record:
-
 Ledger info record (``info``)
 -----------------------------
 
 Each Openchain instance can store a :ref:`DATA record <data-record>` named ``info`` at the root path (``/``). In other words, the record key should be ``/:DATA:info``.
 
 The info record exposes meta-information about the ledger itself. The value must be a JSON document with the following schema:
-
-.. code-block:: json
 
     {
         name: '<string>',
@@ -1407,8 +1293,6 @@ The definition of these fields are the following:
 * ``tos``: The terms of service of the Openchain instance.
 * ``webpage_url``: A link to user-readable content where users can get more information about this Openchain instance.
 
-.. _p2pkh-accounts:
-
 Pay-To-Pubkey-Hash accounts (``/p2pkh/<address>/``)
 ---------------------------------------------------
 
@@ -1416,9 +1300,7 @@ Pay-To-Pubkey-Hash accounts are special accounts with implicit permissions. Sign
 
 This automatically works with any account of that format, where ``<address>`` is a valid base-58 address.
 
-.. note:: ``<address>`` is a base-58 address constructed in the same way a Bitcoin address for the same private and public key would be.
-
-.. _third-party-issuance-accounts:
+Note: ``<address>`` is a base-58 address constructed in the same way a Bitcoin address for the same private and public key would be.
 
 Third-party asset issuance accounts (``/asset/p2pkh/<address>/``)
 -----------------------------------------------------------------
@@ -1427,7 +1309,7 @@ Third-party asset issuance accounts are special accounts with implicit permissio
 
 This automatically works with any account of that format, where ``<address>`` is a valid base-58 address.
 
-.. note:: ``<address>`` is a base-58 address constructed in the same way a Bitcoin address for the same private and public key would be.
+Note: ``<address>`` is a base-58 address constructed in the same way a Bitcoin address for the same private and public key would be.
 
 Dynamic permissions
 ===================
@@ -1445,8 +1327,6 @@ Schema
 ------
 
 The schema of the JSON file that the record contains is the following:
-
-.. code-block:: json
 
     [
         {
@@ -1480,7 +1360,7 @@ The meaning of the fields within a permission object are the following:
   
 - ``recursive``: (Default: true) A boolean indicating whether the permission applies recursively to the sub accounts.
 
-  .. note:: With recursion, lower level permissions overrule higher level permissions.
+	Note: With recursion, lower level permissions overrule higher level permissions.
 
 - ``record_name``: (Default: empty string) The pattern to use for record name matching.
 - ``record_name_matching``: (Default: ``Prefix``) The type of record name matching to use. There are two possible values:
@@ -1488,7 +1368,7 @@ The meaning of the fields within a permission object are the following:
   - ``Exact`` means that the record name must be exactly equal to the value of the ``record_name`` field for the permission to apply.
   - ``Prefix`` means that the record name must start with the value of the ``record_name`` field for the permission to apply. Using ``Prefix`` with an empty ``record_name`` means that the permission applies to all records.
   
-  .. hint:: The record name of an ``ACC`` record is the asset path.
+	Hint: The record name of an ``ACC`` record is the asset path.
   
 - ``permissions``: Contains the permissions being applied if this permission object is a match. The meaning of the various permissions is explained in the next section. The value must be set to ``Permit`` for the permission to be granted, or ``Deny`` for the permission to be denied. If it is unset, the inherited value is used.
 
@@ -1517,7 +1397,7 @@ This permission is required to affect the balance of ``ACC`` records that have a
 
 This permission is required to affect the balance of ``ACC`` records that have never been modified before (the record version is empty).
 
-.. note::
+Note:
     A user can only send funds from an account if she has the ``account_negative`` or ``account_spend`` rights plus the ``account_modify`` or ``account_create`` rights. Sending to an account requires ``account_modify`` or ``account_create`` on the destination account.
 
     A closed loop ledger can be created by denying ``account_modify`` and ``account_create`` by default, and selectively granting these for some accounts. By doing this, only approved accounts can receive funds.
@@ -1568,11 +1448,9 @@ Once the company has validated the identity of the user, it can create an accoun
 
 This can be achieved by creating an ``acl`` record under ``/aka/alice/``.
 
-.. tip:: See the documentation about :ref:`dynamic permissions <dynamic-permissions>` for more details.
+Tip: See the documentation about :ref:`dynamic permissions <dynamic-permissions>` for more details.
 
 The record ``/aka/alice/:DATA:acl`` must be created and set to:
-
-.. code-block:: json
 
     [
         {
@@ -1585,7 +1463,7 @@ The record ``/aka/alice/:DATA:acl`` must be created and set to:
         }
     ]
 
-.. important:: Since only an administrator will have the right to modify this record, the mutation creating this record must be signed using an administrator key.
+Important: Since only an administrator will have the right to modify this record, the mutation creating this record must be signed using an administrator key.
 
 Alice's address is the base-58 representation of the hash of her public key. It is constructed the same way it would be for a Bitcoin address.
 
@@ -1617,8 +1495,6 @@ The final ledger tree should look as follow:
 
 .. image:: /images/closedloop-2.png
 
-.. _loss-theft:
-
 Addressing loss and theft of the private keys
 ---------------------------------------------
 
@@ -1635,7 +1511,7 @@ If fraudulent transactions have happened in the meantime, the administrator can 
 
 For example, if 10 units have been sent fraudulently from ``/aka/alice/`` to ``/aka/oscar/``, then the administrator can simply submit a new transaction sending 10 units from ``/aka/oscar/`` to ``/aka/alice/``, thus reverting the effects of the fraudulent transaction. The ledger being immutable, both transactions will remain visible in the ledger, with the fact that the second transaction transferring funds back from ``/aka/oscar/`` is not signed by Oscar's key, but instead signed by the administrator's key.
 
-.. note:: It bears mentioning that in a setup where all the users have to go through an identity verification process, it is unlikely that Oscar steals funds from Alice in the first place, since the company running the ledger has all the information about Oscar, and could press charges against him.
+Note: It bears mentioning that in a setup where all the users have to go through an identity verification process, it is unlikely that Oscar steals funds from Alice in the first place, since the company running the ledger has all the information about Oscar, and could press charges against him.
 
 Conclusion
 ----------
@@ -1657,8 +1533,6 @@ Configuring the permissions
 
 Create a DATA record called ``acl`` under the gateway path (e.g. ``/asset/btc/``):
 
-.. code-block:: json
-
     [{
         "subjects": [
             { "addresses": [ "<gateway-address>" ], "required": 1 }
@@ -1673,8 +1547,6 @@ Create a DATA record called ``acl`` under the gateway path (e.g. ``/asset/btc/``
     }]
 
 Create a DATA record called ``acl`` in the ``out`` folder under the gateway path (e.g. ``/asset/btc/out/``)
-
-.. code-block:: json
 
     [{
         "subjects": [
