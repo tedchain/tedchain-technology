@@ -90,9 +90,7 @@ Connecting to a server
 
 The wallet is a client side application running in the browser, and capable of connecting to any Tedchain endpoint. It can connect to multiple endpoints at the same time, and pull information and submit transactions to multiple instances of Tedchain, however the first time you use it, you need to connect to at least one endpoint.
 
-
 ![alt tag](https://i.imgur.com/9uwWQaJ.png)
-
 
 The first page invites you to connect to an endpoint. Click the link to use the test endpoint provided by TedLab, then click "Check endpoint". The wallet will then try to connect to the Tedchain instance and retrieve the instance information.
 
@@ -109,9 +107,7 @@ The wallet will now ask you to provide a mnemonic seed used to derive your priva
 
 ![alt tag](https://i.imgur.com/98Uqm4l.png)
 
-Click "Create a new wallet" if you want to generate a new mnemonic, and reuse one you have already generated. Click "Sign in" to confirm.
-
-After the key has been derived from your seed, you should see your home screen:
+Click "Create a new wallet" if you want to generate a new mnemonic, and reuse one you have already generated. Click "Sign in" to confirm. After the key has been derived from your seed, you should see your home screen:
 
 ![alt tag](https://i.imgur.com/8UDorw4.png)
 
