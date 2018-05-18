@@ -56,7 +56,7 @@ Frequently Asked Questions
 --------------------------
 
 Is Tedchain a block chain?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Tedchain falls under the umbrella of Blockchain technology. However, if we take the term "block chain" literally, Tedchain is not a "block chain", but a close cousin. A block chain is a data structure that orders blocks of transactions and links them cryptographically through hashing.
 
@@ -65,14 +65,14 @@ Tedchain doesn't use the concept of blocks. Transactions are directly chained wi
 This means that a more appropriate term for Tedchain is a "transaction chain" rather than a "block chain".
 
 Is Tedchain a sidechain?
-~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 It is possible to use a pegging module that will act as a bridge between a Blockchain (such as Bitcoin) and an Tedchain instance. When Bitcoins are sent to a specific address, a proxy for those coins will be created on the Openchain instance. Later on, these proxy tokens can be redeemed to unlock the Bitcoins on the main chain. This setup creates a 2-way peg between Bitcoin and the Openchain instance. In that scenario, the Openchain instance is behaving as a sidechain.
 
 The pegging module is optional, and an instance doesn't have to be setup as a sidechain if that is not required.
 
 Does Tedchain support multi-signature?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
 Multi-signature is supported. Permissions are expressed using a list of public keys, and a number of require signatures. If you provide 3 public keys, and require 2 signatures, you have a 2-of-3 multi-signature account. Read about :ref:`dynamic permissions <dynamic-permissions>` to learn more about it.
 
@@ -161,14 +161,14 @@ Admin tools
 The wallet also has admin tools built-in.
 
 Ledger tree view
-~~~~~~~~~~~~~~~~
+----------------
 
 The ledger tree view displays a visual representation of the :ref:`account hierarchy <account-hierarchy>`. The details of the record selected on the left will be showed on the right hand side.
 
 .. image:: /images/wallet-10.png
 
 Alias editor
-~~~~~~~~~~~~
+------------
 
 The alias editor lets you configure :ref:`aliases <aliases>` for specific paths. After an alias has been set, it is possible to send funds to the alias directly using the ``@`` prefix. The wallet will automatically resolve the alias.
 
@@ -402,7 +402,7 @@ It is not possible to submit a transaction for validation to an observer node, a
 Observer nodes have the ability to verify the integrity of their copy of the ledger through :ref:`anchors <anchoring>`.
 
 Configuration
-~~~~~~~~~~~~~
+-------------
 
 To configure a node to be in observer mode, the ``observer_mode`` section needs to exist in the :ref:`configuration file <master-observer-configuration>`, and the ``upstream_url`` must be set to the root URL of the upstream node.
 
@@ -528,14 +528,14 @@ Root section
 ``provider`` defines which storage engine to use. The two built-in values are ``SQLite`` and ``MSSQL``.
     
 ``SQLite`` storage engine
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 If the storage provider is set to ``SQLite``, the chain is stored locally using SQLite. In that case, the following setting is used:
     
 * ``path``: The path of the Sqlite database, relative to the ``wwwroot/App_Data`` folder. Absolute paths are also allowed, however, make sure the user under which the DNX process is running has write access to the file.
 
 ``MSSQL`` storage engine
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 If the storage provider is set to ``MSSQL``, the chain is stored using Microsoft SQL Server. In that case, the following setting is used:
 
@@ -681,14 +681,14 @@ Troubleshooting
 .. _invalid-namespace-error:
 
 Error "The namespace used in the transaction is invalid"
--------------------------------------------------------------------------------------------------
+--------------------------------------------------------
 
 You might receive this error message when submitting a transaction. You will get this error if the ``root_url`` set in the configuration doesn't match the namespace set by the client in the transaction. Clients will always use the URL they are connected to as the namespace.
 
 This ensures that a transaction is only valid for one specific instance of Openchain, and that it is not possible to reuse a signed transaction on multiple ledgers.
 
 Solution
-~~~~~~~~
+--------
 
 To solve this, make sure the URL :ref:`set in your configuration file <master-observer-configuration>` (``validator_mode:root_url``) matches the URL that clients use to connect to your Openchain instance. All the components of the URL must match:
 
@@ -765,7 +765,7 @@ A record that has never been set has a ``value`` and ``version`` both equal to a
 .. _check-only-record:
 
 Check-only records
-~~~~~~~~~~~~~~~~~~
+------------------
 
 If a record object has a null ``value`` field, the record object is called a **check-only record**, and does not cause a mutation to the record. It however expresses the requirement that the record (as represented by the ``key`` field) must have the version specified in the ``version`` field of the record object. If the versions don't match, the whole mutation fails to apply.
 
@@ -828,7 +828,7 @@ Record keys are UTF8-encoded strings. They are structured in three parts, separa
 The combination of these three values uniquely identify a record.
 
 Example 1
-~~~~~~~~~
+---------
 
 .. code::
 
@@ -837,7 +837,7 @@ Example 1
 The path is ``/p2pkh/mfiCwNxuFYMtb5ytCacgzDAineD2GNCnYo/``, the record type is ``ACC`` and the record name is ``/asset/p2pkh/n15g8F3sVLufwvPmmX7tYPWrGGbGSbcaEB/``.
     
 Example 2
-~~~~~~~~~
+---------
 
 .. code::
 
@@ -857,7 +857,7 @@ Openchain uses a hierarchy of accounts, similar to a file system. This adds a lo
 Accounts are identified by a path.
 
 Account paths
-~~~~~~~~~~~~~
+-------------
 
 The syntax for an account path follows a number of rules:
 
@@ -866,22 +866,20 @@ The syntax for an account path follows a number of rules:
 * Sections of an account path are separated by the character ``/``.
 * Sections of an account path may only contain alphanumeric characters and characters from the following set: ``$-_.+!*'(),``.
 
-.. _record-types:
-
 Record types
 ------------
 
 There are two valid record types as of this version of Openchain.
 
 ``ACC`` record
-~~~~~~~~~~~~~~
+--------------
 
 The ``ACC`` record is used for representing a balance for a given asset type. The name of the record must be a path that represents the asset type. The value must be a 64-bits signed integer encoded in big endian. The value represents the current balance for the given account and the given asset type.
 
 .. _data-record:
 
 ``DATA`` record
-~~~~~~~~~~~~~~~
+---------------
 
 The ``DATA`` record is used to store arbitrary text data. The record name can be any valid UTF-8 string. It can be used to store things such as :ref:`asset metadata <asset-metadata>`, :ref:`symbolic links <goto-records>` within the accounting system, :ref:`permissions <dynamic-permissions>`, or any other important piece of arbitrary data that needs to be cryptographically secure.
 
@@ -900,7 +898,7 @@ Submits a transaction for validation.
 **Method**: POST
 
 Inputs
-~~~~~~
+------
 
 The input is a JSON document passed as part of the body of the request.
 
