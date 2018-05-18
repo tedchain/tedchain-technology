@@ -1145,9 +1145,9 @@ Inputs
 
 Inputs are passed through the query string as URL encoded parameters.
 
-=================  ==============
-``key``            The hex-encoded record key.
-=================  ==============
+==============  ==============
+``key``         The hex-encoded key of the record being queried.
+==============  ==============
 
 Output
 ------
