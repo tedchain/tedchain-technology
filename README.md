@@ -15,6 +15,7 @@ A reference client implementation is available at [wallet.tedchain.network](http
 Copyright (c) 2014-2018 TEDLab Sciences Ltd
 
 # Tedchain Documentation
+
 Tedchain is an open source distributed ledger technology. It is suited for organizations wishing to issue and manage digital assets in a robust, secure and scalable way.
 
 Overview of Tedchain
@@ -551,8 +552,14 @@ Tedchain uses an extensible architecture where modules can be swapped in and out
 
 This document lists the available modules, and relevant packages.
 
-Storage engines
----------------
+1) Validation engines
+---------------------
+
+2) Anchoring media
+------------------
+
+3) Storage engines
+------------------
 
 Storage engines are core components responsible for storing the transaction chain and records.
 
@@ -775,7 +782,7 @@ Account hierarchy
 
 Tedchain uses a hierarchy of accounts, similar to a file system. This adds a lot of interesting management options that systems like Bitcoin don't have.
 
-.. image:: /images/closedloop-2.png
+![alt tag](https://i.imgur.com/PnAgYef.png)
 
 Accounts are identified by a path.
 
@@ -1470,13 +1477,13 @@ Assuming the following:
 
 A funding transaction will simply take the form of a transaction sending X units of the asset ``/asset/usd/`` from the account ``/treasury/usd/`` to the account ``/aka/alice/``.
 
-.. image:: /images/closedloop-1.png
+![alt tag](https://i.imgur.com/lObJSRo.png)
 
 The transaction should be signed by an administrator only an administrator has access to ``/treasury/usd/``. The balance on ``/treasury/usd/`` will be negative, and reflect the total amount of tokens that have been issued on the ledger. Again, the administrator is allowed to make the balance negative.
 
 The final ledger tree should look as follow:
 
-.. image:: /images/closedloop-2.png
+![alt tag](https://i.imgur.com/PnAgYef.png)
 
 Addressing loss and theft of the private keys
 ---------------------------------------------
