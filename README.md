@@ -14,10 +14,6 @@ A reference client implementation is available at [wallet.tedchain.network](http
 
 Copyright (c) 2014-2018 TEDLab Sciences Ltd
 
-# Tedchain Documentation
-
-Tedchain is an open source distributed ledger technology. It is suited for organizations wishing to issue and manage digital assets in a robust, secure and scalable way.
-
 Overview of Tedchain
 =====================
 
