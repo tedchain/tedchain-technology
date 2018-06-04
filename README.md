@@ -8,7 +8,7 @@ Please refer to the [installation guide](https://github.com/tedchain/tedchain-do
 
 ## Client
 
-A reference client implementation is available at [wallet.tedchain.network](https://wallet.tedchain.network). The source code is available on [GitHub](https://github.com/tedchain/tedchain-wallet).
+A reference client implementation is available at [tedchain.network/wallet](https://tedchain.network/wallet). The source code is available on [GitHub](https://github.com/tedchain/tedchain-wallet).
 
 ## License
 
