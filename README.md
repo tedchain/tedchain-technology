@@ -80,7 +80,7 @@ Tedchain Server exposes a `public HTTP API <http-api>`, which can be called by a
 
 To wrap all those operations in a user-friendly user interface, we also provide a client: the Tedchain Wallet.
 
-The Tedchain Wallet is an open source web based interface, available at `wallet.tedchain.network <http://wallet.tedchain.network>`_.
+The Tedchain Wallet is an open source web based interface, available at [tedchain.network/wallet](https://tedchain.network/wallet).
 
 Connecting to a server
 ----------------------
