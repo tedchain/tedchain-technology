@@ -172,14 +172,14 @@ Note: In the default permission layout, aliases can only be modified by an admin
 Tedchain Server Docker deployment
 ==================================
 
-Tedchain Server is cross platform and can be deployed as a `DNX application <https://dotnet.readthedocs.org/en/latest/dnx/overview.html>`_ on Windows, OS X and Linux. However, to simplify dependency management and homogenize deployment of Tedchain, we are shipping it as a Docker image.
+Tedchain Server is cross platform and can be deployed as a [DNX application](https://dotnet.readthedocs.org/en/latest/dnx/overview.html) on Windows, OS X and Linux. However, to simplify dependency management and homogenize deployment of Tedchain, we are shipping it as a Docker image.
 
 This document explains the few steps necessary to have the Tedchain server running.
 
 Install Docker
 --------------
 
-Note: This assumes you are running Linux. Use `these instructions <http://docs.docker.com/installation/windows/>`_ if you are running Windows, and `these instructions <http://docs.docker.com/installation/mac/>`_ if you are running OS X.
+Note: This assumes you are running Linux. Use [these instructions](http://docs.docker.com/installation/windows) if you are running Windows, and [these instructions](http://docs.docker.com/installation/mac) if you are running OS X.
 
 First, install Docker if you don't have it:
 
@@ -278,7 +278,7 @@ This document explains how to deploy Tedchain directly on a machine without usin
 Prerequisites
 -------------
 
-Install the `.NET Command Line Interface <https://www.microsoft.com/net/core>`_ . This is cross-platform and runs on Windows, Linux and OS X.
+Install the [.NET Command Line Interface](https://www.microsoft.com/net/core). This is cross-platform and runs on Windows, Linux and OS X.
 
 Download the project files
 --------------------------
@@ -648,7 +648,7 @@ Tedchain data structures
 
 Tedchain relies on several data structures for communication between clients and servers. These data structures are a key part of the Tedchain API.
 
-These data structures are serialized and deserialized using `Protocol Buffers <https://developers.google.com/protocol-buffers/>`_.
+These data structures are serialized and deserialized using [Protocol Buffers](https://developers.google.com/protocol-buffers).
 
 Schema
 ------
