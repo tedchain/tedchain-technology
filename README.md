@@ -1473,7 +1473,7 @@ Assuming the following:
 
 A funding transaction will simply take the form of a transaction sending X units of the asset ``/asset/usd/`` from the account ``/treasury/usd/`` to the account ``/aka/alice/``.
 
-![alt tag](https://i.imgur.com/lObJSRo.png)
+![alt tag](https://i.imgur.com/QA0qp1f.png)
 
 The transaction should be signed by an administrator only an administrator has access to ``/treasury/usd/``. The balance on ``/treasury/usd/`` will be negative, and reflect the total amount of tokens that have been issued on the ledger. Again, the administrator is allowed to make the balance negative.
 
