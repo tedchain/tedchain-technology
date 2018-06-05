@@ -87,11 +87,11 @@ Connecting to a server
 
 The wallet is a client side application running in the browser, and capable of connecting to any Tedchain endpoint. It can connect to multiple endpoints at the same time, and pull information and submit transactions to multiple instances of Tedchain, however the first time you use it, you need to connect to at least one endpoint.
 
-![alt tag](https://i.imgur.com/9uwWQaJ.png)
+![alt tag](https://i.imgur.com/YfbxDis.png)
 
 The first page invites you to connect to an endpoint. Click the link to use the test endpoint provided by TedLab, then click "Check endpoint". The wallet will then try to connect to the Tedchain instance and retrieve the instance information.
 
-![alt tag](https://i.imgur.com/DaokjGr.png)
+![alt tag](https://i.imgur.com/hHjzr7U.png)
 
 Confirm to connect to this endpoint.
 
@@ -102,11 +102,11 @@ Logging in
 
 The wallet will now ask you to provide a mnemonic seed used to derive your private key and address.
 
-![alt tag](https://i.imgur.com/98Uqm4l.png)
+![alt tag](https://i.imgur.com/REmp16l.png)
 
 Click "Create a new wallet" if you want to generate a new mnemonic, and reuse one you have already generated. Click "Sign in" to confirm. After the key has been derived from your seed, you should see your home screen:
 
-![alt tag](https://i.imgur.com/8UDorw4.png)
+![alt tag](https://i.imgur.com/lwzLrmJ.png)
 
 You are now able to receive payments on the Tedchain instance by giving your account path to the payer (``/p2pkh/n2yYKCsho8gDrr53SUtzgtKCBypD3JMUxo/`` in the example above).
 
@@ -117,21 +117,21 @@ The test endpoint provided by TedLab has third party asset issuance enabled, so 
 
 To do this, click the "Assets" tab.
 
-![alt tag](https://i.imgur.com/WHA1yAY.png)
+![alt tag](https://i.imgur.com/Z6Gdnf7.png)
 
 Select the endpoint and the first slot, and click "Confirm".
 
-![alt tag](https://i.imgur.com/pES1ORw.png)
+![alt tag](https://i.imgur.com/VMxXhFs.png)
    
 Click "Issue Asset" and type an amount to issue (10000 for example). Press "Issue".
 
 You should then see a confirmation of the transaction.
 
-![alt tag](https://i.imgur.com/X30lEcX.png)
+![alt tag](https://i.imgur.com/fESRbn3.png)
    
 Your account should have been updated with the newly issued asset.
 
-![alt tag](https://i.imgur.com/MzwoOEV.png)
+![alt tag](https://i.imgur.com/sxN8c0C.png)
 
 Tip: You can use the "Edit Asset Definition" box in the asset issuance page to define `metadata <asset-metadata>` about your asset, such as a name and icon.
 
@@ -142,13 +142,13 @@ Now that we have funds, we can send them.
 
 Click the newly issued asset to be taken to the "Send" page.
 
-![alt tag](https://i.imgur.com/7gjOmqN.png)
+![alt tag](https://i.imgur.com/XPhKxFi.png)
    
 Type a valid destination, such as ``/p2pkh/mfiCwNxuFYMtb5ytCacgzDAineD2GNCnYo/``, and a valid amount.
 
 Press "Send" to confirm. If the transaction went through successfully, you should see the transaction confirmation screen.
 
-![alt tag](https://i.imgur.com/X30lEcX.png)
+![alt tag](https://i.imgur.com/fESRbn3.png)
 
 Admin tools
 -----------
@@ -160,7 +160,7 @@ Ledger tree view
 
 The ledger tree view displays a visual representation of the `account hierarchy <account-hierarchy>`. The details of the record selected on the left will be showed on the right hand side.
 
-![alt tag](https://i.imgur.com/XQa7sz6.png)
+![alt tag](https://i.imgur.com/RDzS2kP.png)
 
 Alias editor
 ------------
@@ -778,7 +778,7 @@ Account hierarchy
 
 Tedchain uses a hierarchy of accounts, similar to a file system. This adds a lot of interesting management options that systems like Bitcoin don't have.
 
-![alt tag](https://i.imgur.com/PnAgYef.png)
+![alt tag](https://i.imgur.com/Q3bcsn0.png)
 
 Accounts are identified by a path.
 
@@ -1473,13 +1473,13 @@ Assuming the following:
 
 A funding transaction will simply take the form of a transaction sending X units of the asset ``/asset/usd/`` from the account ``/treasury/usd/`` to the account ``/aka/alice/``.
 
-![alt tag](https://i.imgur.com/QA0qp1f.png)
+![alt tag](https://i.imgur.com/wFe1fZS.png)
 
 The transaction should be signed by an administrator only an administrator has access to ``/treasury/usd/``. The balance on ``/treasury/usd/`` will be negative, and reflect the total amount of tokens that have been issued on the ledger. Again, the administrator is allowed to make the balance negative.
 
 The final ledger tree should look as follow:
 
-![alt tag](https://i.imgur.com/PnAgYef.png)
+![alt tag](https://i.imgur.com/Q3bcsn0.png)
 
 Addressing loss and theft of the private keys
 ---------------------------------------------
