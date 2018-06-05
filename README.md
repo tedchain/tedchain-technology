@@ -1288,7 +1288,7 @@ Note: ``<address>`` is a base-58 address constructed in the same way a Bitcoin a
 Third-party asset issuance accounts (``/asset/p2pkh/<address>/``)
 -----------------------------------------------------------------
 
-Third-party asset issuance accounts are special accounts with implicit permissions. The owner of the private key corresponding to <address> can sign transactions spending funds from this account. Funds have to be of the asset type ``/asset/p2pkh/<address>``. Also, this address is authorized to have a negative balance. This means it is possible to use this address as the issuance source of asset type ``/asset/p2pkh/<address>``.
+Third-party asset issuance accounts are special accounts with implicit permissions. The owner of the private key corresponding to ``<address>`` can sign transactions spending funds from this account. Funds have to be of the asset type ``/asset/p2pkh/<address>``. Also, this address is authorized to have a negative balance. This means it is possible to use this address as the issuance source of asset type ``/asset/p2pkh/<address>``.
 
 This automatically works with any account of that format, where ``<address>`` is a valid base-58 address.
 
