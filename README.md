@@ -106,7 +106,7 @@ The wallet will now ask you to provide a mnemonic seed used to derive your priva
 
 Click "Create a new wallet" if you want to generate a new mnemonic, and reuse one you have already generated. Click "Sign in" to confirm. After the key has been derived from your seed, you should see your home screen:
 
-![alt tag](https://i.imgur.com/lwzLrmJ.png)
+![alt tag](https://i.imgur.com/ouFr27C.png)
 
 You are now able to receive payments on the Tedchain instance by giving your account path to the payer (``/p2pkh/n2yYKCsho8gDrr53SUtzgtKCBypD3JMUxo/`` in the example above).
 
@@ -131,7 +131,7 @@ You should then see a confirmation of the transaction.
    
 Your account should have been updated with the newly issued asset.
 
-![alt tag](https://i.imgur.com/sxN8c0C.png)
+![alt tag](https://i.imgur.com/0apoqsP.png)
 
 Tip: You can use the "Edit Asset Definition" box in the asset issuance page to define `metadata <asset-metadata>` about your asset, such as a name and icon.
 
